@@ -1,0 +1,78 @@
+body {
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease;
+}
+.wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+}
+.prescription_form {
+    width: 100%;
+    height: 100vh;
+
+    background: white;
+}
+.prescription {
+    width: 720px;
+    margin: 0 auto;
+    border: 1px solid lightgrey;
+}
+.prescription tr > td {
+    padding: 15px;
+}
+.header {
+    color: #333;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    flex: 1;
+}
+.logo img {
+    width: 200px;
+    float: left;
+}
+.credentials {
+    flex: 1;
+    margin-right: 100px;
+    font-weight: bold;
+}
+.credentials p {
+    margin: 0 0 2px 0;
+    padding: 3px 0px;
+}
+
+.d-header {
+    width: 100%;
+    text-align: center;
+    background: #8e97a2;
+    padding: 5px;
+    color: white;
+    font-weight: 800;
+}
+.symptoms,
+.advice {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+.advice p {
+    letter-spacing: 0;
+    font-size: 14px;
+}
+.desease {
+    max-width: 90px;
+}
+
+.desease_details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
