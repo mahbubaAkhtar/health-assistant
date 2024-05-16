@@ -14,9 +14,7 @@
 <div class="main_container">
     <div class="container">
         <h2 class="contact-box-mess">Fever</h2>
-        <p>A fever is a temporary rise in body temperature. It's one part of an overall response from the body's immune system. A fever is usually caused by an infection.
-            For most children and adults, a fever may be uncomfortable. But it usually isn't a cause for concern. For infants, however, even a low fever may mean there's a serious infection.
-            Fevers generally go away within a few days. A number of over-the-counter medications lower a fever. But you don't necessarily need to treat a fever if it's not causing discomfort.</p>
+        <p><b class="bold">Feve</b> is a temporary increase in body temperature, often in response to an illness, infection, or other medical condition. It is a common symptom of many infections, including viral and bacterial illnesses, but it can also be caused by inflammatory conditions, heat exhaustion, or certain medications. Typically, a normal body temperature is around 98.6°F (37°C) when measured orally. However, slight variations are common, and body temperature can fluctuate throughout the day. A fever is generally defined as a body temperature above 100.4°F (38°C) when measured orally.<br><b class="bold">Fever can be caused</b> by infections (like flu or urinary tract infections), inflammatory conditions, heat exposure, certain medications, vaccinations, cancer, autoimmune disorders, endocrine disorders, blood clots, or idiopathic reasons.</p>
         <a href="Questionnaire.html"><button class="sendbtn">Next -> </button></a>
     </div>
 </div>

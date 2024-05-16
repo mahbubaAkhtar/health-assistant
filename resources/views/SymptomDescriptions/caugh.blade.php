@@ -14,13 +14,12 @@
 @include('Navbar.navbar')
 <div class="main_container">
     <div class="container">
-        <h2 class="contact-box-mess">FEVER</h2>
-        <p>A fever is a temporary rise in body temperature. It's one part of an overall response from the body's immune system. A fever is usually caused by an infection.
-            For most children and adults, a fever may be uncomfortable. But it usually isn't a cause for concern. For infants, however, even a low fever may mean there's a serious infection.
-            Fevers generally go away within a few days. A number of over-the-counter medications lower a fever. But you don't necessarily need to treat a fever if it's not causing discomfort.</p>
+        <h2 class="contact-box-mess">Caugh</h2>
+        <p><b class="bold">Cough</b> is a reflex action that helps clear your airways of mucus, irritants, or foreign particles. It's a common symptom of various respiratory infections, allergies, or conditions such as colds, flu, bronchitis, pneumonia, asthma, or even environmental irritants like smoke or dust. Coughing can be productive (bringing up mucus or phlegm) or dry (without producing any mucus). It serves as a protective mechanism for your body to expel irritants and maintain clear air passages. However, persistent or severe coughing may indicate an underlying health issue and should be evaluated by a healthcare professional.<br><b class="bold">Coughing can be caused</b> by respiratory infections, allergies, environmental irritants, asthma, acid reflux, postnasal drip, medications, COPD, lung diseases, or psychological factors like stress.</p>
         <a href="#"><button class="sendbtn">Next -> </button></a>
         </form>
     </div>
+</div>
 
 </body>
 </html>

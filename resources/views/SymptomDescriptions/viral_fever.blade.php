@@ -14,13 +14,11 @@
 @include('Navbar.navbar')
 <div class="main_container">
     <div class="container">
-        <h2 class="contact-box-mess">FEVER</h2>
-        <p>A fever is a temporary rise in body temperature. It's one part of an overall response from the body's immune system. A fever is usually caused by an infection.
-            For most children and adults, a fever may be uncomfortable. But it usually isn't a cause for concern. For infants, however, even a low fever may mean there's a serious infection.
-            Fevers generally go away within a few days. A number of over-the-counter medications lower a fever. But you don't necessarily need to treat a fever if it's not causing discomfort.</p>
+        <h2 class="contact-box-mess">Viral Fever</h2>
+        <p><b class="bold">Viral fever</b> is an increase in body temperature caused by a viral infection. Symptoms include fever, fatigue, body aches, sore throat, cough, and runny nose. Treatment typically involves rest, hydration, and over-the-counter medications for symptom relief.<br><b class="bold">Viral fevers are caused</b> by various viruses, including influenza (flu), common cold viruses (rhinovirus, coronavirus), adenovirus, respiratory syncytial virus (RSV), and others. These viruses are typically transmitted through respiratory droplets or direct contact with contaminated surfaces.</p>
         <a href="#"><button class="sendbtn">Next -> </button></a>
         </form>
     </div>
-
+</div>
 </body>
 </html>

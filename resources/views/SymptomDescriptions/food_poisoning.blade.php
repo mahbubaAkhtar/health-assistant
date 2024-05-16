@@ -15,13 +15,12 @@
 <div id="navbar"></div>
 <div class="main_container">
     <div class="container">
-        <h2 class="contact-box-mess">FOOD POISONING</h2>
-        <p>Food poisoning is an irritation or infection in your digestive system that you get from something you eat or drink. It's usually caused by foods or drinks contaminated with viruses, parasites, or bacteria. However, harmful chemicals can also cause food poisoning sometimes.Usually, food poisoning comes on fast and doesn't last long (often less than a week), and most people get better without treatment. However, for some people, food poisoning lasts longer or causes serious complications.
-            Anyone can get food poisoning, but the groups of people more likely to get food poisoning include:Older adults,Infants and children,Pregnant people ,People with weakened immune systems
-            These groups of people are also more likely to have serious symptoms or complications.</p>
+        <h2 class="contact-box-mess">Food Poisoning</h2>
+        <p><b class="bold">Food poisoning</b> occurs when contaminated food or drinks are consumed, leading to illness with symptoms like nausea, vomiting, diarrhea, abdominal pain, fever, and fatigue. It's caused by harmful bacteria, viruses, parasites, or toxins. Prevention involves safe food handling and hygiene practices.<br><b class="bold">Food poisoning caused</b> by consuming food or beverages contaminated with harmful bacteria, viruses, parasites, or toxins. Contamination can occur during food production, processing, handling, or preparation. Common pathogens responsible for food poisoning include Salmonella, Escherichia coli (E. coli), Campylobacter, Listeria, Staphylococcus aureus, norovirus, hepatitis A virus, Giardia, Cryptosporidium, and toxins produced by bacteria like Clostridium botulinum.</p>
         <a href="Questionnaire.html"><button class="sendbtn">Next -> </button></a>
         </form>
     </div>
+</div>
 
 </body>
 </html>

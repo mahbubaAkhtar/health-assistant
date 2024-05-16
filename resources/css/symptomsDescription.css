@@ -26,8 +26,12 @@
 }
 
 .container p {
-    color: rgb(136, 136, 136);
+    color: rgb(142, 151, 162);
     letter-spacing: 0.4px;
+}
+.bold{
+    color: #23096b;
+    font-size: 20px;
 }
 
 .container form {

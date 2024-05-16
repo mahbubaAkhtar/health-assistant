@@ -13,8 +13,9 @@ return new class extends Migration
     {
         Schema::create('symptoms', function (Blueprint $table) {
             $table->id();
-            $table->string('name',length: 20);
-            $table->text(column: 'description');
+            $table->string('name', 20);
+            $table->text('description');
+            $table->string('image_src');
             $table->timestamps();
         });
     }
