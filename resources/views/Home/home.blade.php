@@ -16,18 +16,11 @@
 <!--Slider-->
 <div class="slideshow-container">
 
+    @foreach($tips as $healthTips)
     <div class="mySlides fade">
-        <img src="../Images/health_tips_01.webp" style="width:100%;">
+        <img src="{{$healthTips->image_src}}" style="width:100%; height: 350px">
     </div>
-
-    <div class="mySlides fade">
-        <img src="../Images/health_tips_02.webp" style="width:100%; height: 350px;">
-    </div>
-
-    <div class="mySlides fade">
-        <img src="../Images/health_tips_03.jpg" style="width:100%; height: 350px;">
-
-    </div>
+    @endforeach
 
     <a class="prev" onclick="plusSlides(-1)">❮</a>
     <a class="next" onclick="plusSlides(1)">❯</a>
@@ -36,9 +29,9 @@
 <br>
 
 <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
+    @foreach($tips as $index => $healthTips)
+    <span class="dot" onclick="currentSlide({{$index+1}})"></span>
+    @endforeach
 </div>
 
 <script>
@@ -80,128 +73,45 @@
     <section class="Symptom">
         <h2 class="Symptom-category"><b>SELECT SYMPTOM</b></h2>
         <div class="Symptom-container">
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/fever.png" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-fever')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
+            @foreach($symptoms as $symptom )
+                <div class="Symptom-card">
+                    <div class="Symptom-image">
+                        <img src="{{$symptom->image_src}}" class="Symptom-box" alt="">
+                        <a href="{{route('symptoms.view', $symptom->id)}}">
+                            <button class="symptom-description-button">Choose Symptom</button>
+                        </a>
+                    </div>
+                    <div class="Symptom-info">
+                        <h2 class="Symptom-brand">{{$symptom->name}}</h2>
+                    </div>
                 </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">Fever</h2>
-                </div>
-            </div>
+            @endforeach
 
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/Food_Poisoning.png" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-foodPoisoning')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">Food poisoning</h2>
-                </div>
-            </div>
-
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/Migraine.jpg" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-migraine')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">MIGRAINE</h2>
-                </div>
-
-            </div>
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/back_pain.png" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-lowBackPain')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">LOW BACK PAIN</h2>
-                </div>
-            </div>
-
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/caugh.jpg" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-caugh')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">CAUGH</h2>
-                </div>
-            </div>
-
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/Scabies.webp" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-scabies')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">SCABIES</h2>
-                </div>
-            </div>
-
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/vomiting.webp" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-vomiting')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">VOMITING</h2>
-                </div>
-            </div>
-
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/viral_fever.jpg" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-viralFever')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">VIRAL FEVER</h2>
-                </div>
-            </div>
-
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/Sore_throat.webp" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-soreThroat')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">SORE THROAT</h2>
-                </div>
-            </div>
-
-            <div class="Symptom-card">
-                <div class="Symptom-image">
-                    <img src="../Images/Allergic_Rhinitis.jfif" class="Symptom-box" alt="">
-                    <a href="{{route('symptoms-allergicRhinitis')}}">
-                        <button class="symptom-description-button">Choose Symptom</button>
-                    </a>
-                </div>
-                <div class="Symptom-info">
-                    <h2 class="Symptom-brand">ALLERGIC RHINITIS</h2>
-                </div>
-            </div>
 
         </div>
     </section>
+</div>
+
+<!--footer-->
+<div>
+    <footer class="footer">
+        <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
+        </div>
+        <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="{{route('home')}}">Home</a></li>
+            <li class="menu__item"><a class="menu__link" href="{{route('about')}}">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="#">Term & Condition</a></li>
+            <li class="menu__item"><a class="menu__link" href="{{route('contact')}}">Contact</a></li>
+
+        </ul>
+        <p>&copy;2024 Mahbuba Akhtar | All Rights Reserved</p>
+    </footer>
+    <!--    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>-->
+    <!--    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>-->
 </div>
 
 </body>

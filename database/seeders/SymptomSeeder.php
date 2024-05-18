@@ -70,9 +70,9 @@ class SymptomSeeder extends Seeder
             ],
 
             [
-                "name" => "Viral fever",
-                "description" => "<b class='bold'>Viral fever</b> is an increase in body temperature caused by a viral infection. Symptoms include fever, fatigue, body aches, sore throat, cough, and runny nose. Treatment typically involves rest, hydration, and over-the-counter medications for symptom relief.<br><b class='bold'>Viral fevers are caused</b> by various viruses, including influenza (flu), common cold viruses (rhinovirus, coronavirus), adenovirus, respiratory syncytial virus (RSV), and others. These viruses are typically transmitted through respiratory droplets or direct contact with contaminated surfaces.",
-                "image_src" => "/Images/viral_fever.jpg",
+                "name" => "Burn",
+                "description" =>"<b class='bold'>burn</b> refers to an injury to the skin or other tissues caused by heat, electricity, chemicals, friction, or radiation. It can vary from mild redness to severe tissue damage.<br><b class='bold'>Burns can be caused </b>by heat, electricity, chemicals, friction, radiation, fire, scalding, or cold exposure.",
+                "image_src" => "/Images/burn.avif",
                 "created_at" => now(),
                 "updated_at" => now()
             ],
