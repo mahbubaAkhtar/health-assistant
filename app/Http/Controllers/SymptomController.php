@@ -22,7 +22,7 @@ class SymptomController extends Controller
             ->where('is_active', '=',true)
             ->get();
 
-        return view('QuestionnairesDetails/fever',[
+        return view('Symptoms/questions',[
             'symptom_name' => $symptom->name,
             'questions' => $questionsrrrr
         ]);
