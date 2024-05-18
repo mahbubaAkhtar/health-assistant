@@ -13,8 +13,7 @@ return new class extends Migration
     {
         Schema::create('health_tips', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->string('image_spurce');
+            $table->string('image_src');
             $table->timestamps();
         });
     }

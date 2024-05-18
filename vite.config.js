@@ -11,6 +11,8 @@ export default defineConfig({
                 'resources/css/profile.css',
                 'resources/css/editProfile.css',
                 'resources/css/symptomsDescription.css',
+                'resources/css/symptomsQuestionnaires.css',
+                'resources/css/about.css',
             ],
             refresh: true,
         }),

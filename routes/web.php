@@ -1,14 +1,20 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return view('Home/home');
-})->name('home');
+//Route::get('/', [create_controller_nameController::class, 'function_name'])->name('route_name');
+//home
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
 
 Route::get('/contact_us', function () {
     return view('Contact/contact_us');
 })->name('contact');
+
+Route::get('/about', function () {
+    return view('About/about');
+})->name('about');
 
 Route::get('profile', function () {
     return view('Profile/profile');
@@ -18,46 +24,51 @@ Route::get('editProfile', function () {
     return view('Profile/editProfile');
 })->name('edit-profile');
 
+//Symptoms Description
 
-Route::get('symptoms/fever', function () {
-    return view('SymptomDescriptions/fever');
-})->name('symptoms-fever');
+Route::get('/symptoms/{id}',[\App\Http\Controllers\SymptomController::class,'show'])->name('symptoms.view');
 
-Route::get('symptoms/food_poisoning', function () {
-    return view('SymptomDescriptions/food_poisoning');
-})->name('symptoms-foodPoisoning');
+//Questionnaires
 
-Route::get('symptoms/migraine', function () {
-    return view('SymptomDescriptions/migraine');
-})->name('symptoms-migraine');
+Route::get('questionnaires/fever', function () {
+    return view('QuestionnairesDetails/fever');
+})->name('fever');
 
-Route::get('symptoms/allergicRhinitis', function () {
-    return view('SymptomDescriptions/allergic_rhinitis');
-})->name('symptoms-allergicRhinitis');
+Route::get('questionnaires/foodPoisoning', function () {
+    return view('QuestionnairesDetails/food_poisoning');
+})->name('food-poisoning');
 
-Route::get('symptoms/lowBackPain', function () {
-    return view('SymptomDescriptions/low_back_pain');
-})->name('symptoms-lowBackPain');
+Route::get('questionnaires/migraine', function () {
+    return view('QuestionnairesDetails/migraine');
+})->name('migraine');
 
-Route::get('symptoms/scabies', function () {
-    return view('SymptomDescriptions/scabies');
-})->name('symptoms-scabies');
+Route::get('questionnaires/lowBackPain', function () {
+    return view('QuestionnairesDetails/low_back_pain');
+})->name('low-back-pain');
 
-Route::get('symptoms/soreThroat', function () {
-    return view('SymptomDescriptions/sore_throat');
-})->name('symptoms-soreThroat');
+Route::get('questionnaires/caugh', function () {
+    return view('QuestionnairesDetails/caugh');
+})->name('caugh');
 
-Route::get('symptoms/viralFever', function () {
-    return view('SymptomDescriptions/viral_fever');
-})->name('symptoms-viralFever');
+Route::get('questionnaires/scabies', function () {
+    return view('QuestionnairesDetails/scabies');
+})->name('scabies');
 
-Route::get('symptoms/vomiting', function () {
-    return view('SymptomDescriptions/vomiting');
-})->name('symptoms-vomiting');
+Route::get('questionnaires/vomiting', function () {
+    return view('QuestionnairesDetails/vomiting');
+})->name('vomiting');
 
-Route::get('symptoms/caugh', function () {
-    return view('SymptomDescriptions/caugh');
-})->name('symptoms-caugh');
+Route::get('questionnaires/burn', function () {
+    return view('QuestionnairesDetails/burn');
+})->name('burn');
+
+Route::get('questionnaires/soreThroat', function () {
+    return view('QuestionnairesDetails/sore_throat');
+})->name('sore-throat');
+
+Route::get('questionnaires/allergicRhinitis', function () {
+    return view('QuestionnairesDetails/allergic_rhinitis');
+})->name('allergic_rhinitis');
 
 
 
