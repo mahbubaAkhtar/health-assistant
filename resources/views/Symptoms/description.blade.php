@@ -15,7 +15,7 @@
     <div class="container">
         <h2 class="contact-box-mess">{{ $symptom->name }}</h2>
         <p>{!! $symptom->description !!}</p>
-        <a href="{{route('fever')}}"><button class="sendbtn">Next -> </button></a>
+        <a href="{{route('symptoms.questions',$symptom->id)}}"><button class="sendbtn">Next -> </button></a>
     </div>
 </div>
 

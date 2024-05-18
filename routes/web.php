@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\SymptomController;
 use Illuminate\Support\Facades\Route;
 
 //Route::get('/', [create_controller_nameController::class, 'function_name'])->name('route_name');
@@ -26,7 +27,8 @@ Route::get('editProfile', function () {
 
 //Symptoms Description
 
-Route::get('/symptoms/{id}',[\App\Http\Controllers\SymptomController::class,'show'])->name('symptoms.view');
+Route::get('/symptoms/{id}',[SymptomController::class,'show'])->name('symptoms.view');
+Route::get('/symptoms/{id}/questions',[SymptomController::class,'questionsBySymptomId'])->name('symptoms.questions');
 
 //Questionnaires
 
@@ -34,7 +36,7 @@ Route::get('questionnaires/fever', function () {
     return view('QuestionnairesDetails/fever');
 })->name('fever');
 
-Route::get('questionnaires/foodPoisoning', function () {
+Route::get('questionnaires/food_poisoning', function () {
     return view('QuestionnairesDetails/food_poisoning');
 })->name('food-poisoning');
 
@@ -42,7 +44,7 @@ Route::get('questionnaires/migraine', function () {
     return view('QuestionnairesDetails/migraine');
 })->name('migraine');
 
-Route::get('questionnaires/lowBackPain', function () {
+Route::get('questionnaires/low_back_pain', function () {
     return view('QuestionnairesDetails/low_back_pain');
 })->name('low-back-pain');
 

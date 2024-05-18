@@ -15,7 +15,7 @@
 @include('Navbar/navbar')
 <!-- Creating the form container  -->
 <div class="container">
-    <h1>Fever Questionnaire Form</h1>
+    <h1>{{$symptom_name}} Questionnaire Form</h1>
 
     <!-- Contains error -->
     <h4 id="errorText"></h4>
@@ -29,29 +29,32 @@
             <label for="age">Age:</label><br>
             <input type="number" id="age" name="age" required><br>
 
-            <label for="temperature">Enter your Temperature:</label><br>
-            <input type="number" id="temperature" name="temperature" required><br>
+            @foreach($questions as $question)
+                <label for="{{'input-' .$question->id}}">{{$question->name}}</label><br>
 
-            <label for="day">Duration of your Fever:</label><br>
-            <input type="number" id="day" name="day" required><br>
+                @if($question->input_type == 'text')
+                    <input type="text" id="{{'input-' .$question->id}}" name="temperature" required><br>
 
-            <label for="headache">Do you have Headache?</label><br>
-            <input type="radio" id="headache" name="headache" value="yes">
-            <label for="yes">Yes</label>
-            <input type="radio" id="headache" name="headache" value="no" >
-            <label for="no">No</label><br>
+                @elseif($question->input_type == 'number')
+                    <input type="number" id="{{'input-' .$question->id}}" name="temperature" required><br>
 
-            <label for="Coldcough">Do you have Cold Cough?</label><br>
-            <input type="radio" id="Coldcough" name="Coldcough" value="yes">
-            <label for="yes">Yes</label>
-            <input type="radio" id="Coldcough" name="Coldcough" value="no">
-            <label for="no">No</label><br>
+                @elseif($question->input_type == 'radio')
+                    @foreach($question->input_options as $option)
+                        <input type="radio" id="{{'input-' . $option['value'] . $question->id}}"
+                               name="{{'input-' .$question->id}}" value="{{$option['value']}}">
+                        <label for="{{'input-' . $option['value'] . $question->id}}">{{$option['name']}}</label><br>
+                    @endforeach
 
+                @elseif($question->input_type == 'textarea')
+                    <textarea id="{{'input-' .$question->id}}" name="feedback"><br>
 
-            <label for="feedback">If you have any other health issue,let us know here.Like-Diabetes,Hypertension etc.. (optional):</label><br>
-            <input type="textarea" id="feedback" name="feedback"><br>
+                @endif
 
-            <a href="Fever_Prescription.html"><button type="submit">Submit</button></a>
+            @endforeach
+
+            <a href="Fever_Prescription.html">
+                <button type="submit">Submit</button>
+            </a>
         </form>
     </div>
 </div>
@@ -168,7 +171,7 @@
                     );
                 const blob = new Blob(
                     [csvContent],
-                    { type: "text/csv" }
+                    {type: "text/csv"}
                 );
 
                 // Reseting the form after certain

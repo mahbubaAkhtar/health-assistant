@@ -33,6 +33,7 @@
             <input type="number" id="day" name="day" required><br>
 
             <label for="stuffyNose">Do you feel runny or stuffy nose?</label><br>
+
             <input type="radio" id="stuffyNose" name="stuffyNose" value="yes">
             <label for="yes">Yes</label>
             <input type="radio" id="stuffyNose" name="stuffyNose" value="no" >

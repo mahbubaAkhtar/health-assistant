@@ -14,8 +14,12 @@ return new class extends Migration
         Schema::create('symptom_questions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
+            $table->enum('input_type', ['text','number','radio','textarea']);
+            $table->json('input_options')->nullable();
+            $table->boolean('input_is_required')->default(true);
             $table->foreignId('symptom_id')->constrained('symptoms','id');
-            $table->foreignId('generic_eligibilities_id')->constrained('generic_eligibilities','id');
+//            $table->foreignId('generic_eligibilities_id')->constrained('generic_eligibilities','id');
+            $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
     }
