@@ -32,18 +32,18 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Do you have Headache?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you have Cold Cough?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                 ]
             ],
@@ -62,26 +62,26 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Do you have vomiting?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you have feel stomach pain?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Is blood coming with the stool?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                 ]
             ],
@@ -100,34 +100,34 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Are you feel intense throbbing head pain?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you feel accompanied by nausea and vomiting, as well as sensitivity to light and sound?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you have one-sided head pain?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Have you had any head injuries?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                 ]
             ],
@@ -145,18 +145,18 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Always you feel pain?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you eat any medicine for removing pain?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ]
                 ]
             ],
@@ -175,18 +175,18 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Do you feel like your nose is blocked?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do  you feel chest pain with caugh?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ]
                 ]
             ],
@@ -205,19 +205,19 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "When does your scabies mainly occur?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Day", "value" => "day"],
                             ["name" => "Night", "value" => "night"],
                             ["name" => "All Time", "value" => "all_time"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Does anyone else in your householder have scabies?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ]
                 ]
 
@@ -237,18 +237,18 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Do you have stomach pain?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you feel  weak?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ]
                 ]
             ],
@@ -263,26 +263,26 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "The burned areas looking red?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Having pain in the burn area?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Having any problem other than the res & light pain in the burned area?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ]
                 ]
             ],
@@ -301,18 +301,18 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Do you feel pain when you eating??",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do yo see Red and swollen tonsils?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ]
                 ],
             ],
@@ -330,34 +330,34 @@ class SymptomSeeder extends Seeder
                     [
                         "name" => "Did you sneeze a lot?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you feel like your nose is blocked?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you have cough?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ],
                     [
                         "name" => "Do you have fever?",
                         "input_type" => "radio",
-                        "input_options" => json_encode([
+                        "input_options" => [
                             ["name" => "Yes", "value" => "yes"],
                             ["name" => "No", "value" => "no"],
-                        ])
+                        ]
                     ]
                 ]
             ]

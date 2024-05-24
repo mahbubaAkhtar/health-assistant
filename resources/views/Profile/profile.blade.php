@@ -27,7 +27,7 @@
                 <tr>
                     <td>Name</td>
                     <td>:</td>
-                    <td>Mahbuba Akhtar</td>
+                    <td>{{$user->name}}</td>
                 </tr>
                 <tr>
                     <td>Date of Birth</td>
@@ -37,7 +37,7 @@
                 <tr>
                     <td>Email</td>
                     <td>:</td>
-                    <td>mahbuba35-3049@diu.edu.bd</td>
+                    <td>{{$user->email}}</td>
                 </tr>
                 <tr>
                     <td>Gender</td>
