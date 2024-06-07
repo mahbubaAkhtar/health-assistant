@@ -10,8 +10,10 @@
 </head>
 
 <body>
-@include('Navbar.navbar')
-
+<!------LOGO SECTION---->
+<div class="nav-logo-section">
+    <img id="nav_logo" src="/Images/logo.png">
+</div>
 <div class="container" id="container">
     <div class="form-container sign-up-container">
         <form method="POST" action="{{ route('register') }}">
@@ -25,8 +27,17 @@
             <span>or use your email for registration</span>
             <input required type="text" placeholder="Name" id="name" name="name"/>
             <input required type="email" placeholder="Email" id="email" name="email"/>
+            <x-input-error :messages="$errors->get('email')" class="mt-2" @style('font-size: 12px; color: #c52020 ;') />
             <input required minlength="6" type="password" placeholder="Password" id="password" name="password"/>
+            <x-input-error :messages="$errors->get('password')" class="mt-2" @style('font-size: 12px; color: #c52020 ;') />
             <input required minlength="6" type="password" placeholder="Confirm Password" id="password_confirmation" name="password_confirmation"/>
+            <div class="termCondition">
+                <input type="checkbox" class="terms" required>
+                <span>I Agree </span>
+                <a @style('text-decoration: underline; color: blue;') target="_blank" href="{{ route('termsConditions') }}">
+                    {{ __('Terms & conditions') }}
+                </a>
+            </div>
             <button type="submit">Sign Up</button>
         </form>
     </div>
@@ -41,6 +52,7 @@
             </div>
             <span>or use your account</span>
             <input required type="email" placeholder="Email" id="signinEmail" name="email"/>
+            <x-input-error :messages="$errors->get('email')" class="mt-2" @style('font-size: 12px; color: #c52020 ;') />
             <input required type="password" placeholder="Password" id="signinPassword" name="password"/>
             @if (Route::has('password.request'))
                 <a class="underline text-sm text-gray-600 hover:text-gray-900 rounded-md focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500" href="{{ route('password.request') }}">

@@ -1,6 +1,5 @@
-
-
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+/*font style*/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
 
 * {
     box-sizing: border-box;
@@ -21,6 +20,7 @@ body {
 
     width: 70%;
     margin-top: 2%;
+    margin-left: 90px;
 }
 
 h1 {
@@ -317,5 +317,5 @@ footer a {
 }
 
 .terms{
-    width: 15%;
+    width: 10%;
 }

@@ -77,13 +77,15 @@
 .dropdown-content {
     position: absolute;
     top: 100%;
-    left: 0;
+    left: -30px;
     float: left;
     background-color: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 1;
     display: none;
     text-align: left;
+    width: 156px;
+
 }
 
 .dropdown-content a {

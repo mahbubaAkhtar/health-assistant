@@ -13,7 +13,7 @@
 </head>
 
 <body>
-<div id="navbar"></div>
+@include('Navbar.navbar')
 <!-- Main -->
 <div class="main">
     <img class="user-image" src="../Images/user-profile.jpg">

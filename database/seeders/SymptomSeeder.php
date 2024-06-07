@@ -22,67 +22,84 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
-                        "name" => "what's your temperature?",
+                        "concern_key" => "weight",
+                        "name" => "what's your weight?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "temperature",
+                        "name" => "what's your temperature?",
+                        "input_type" => "dropdown",
+                        "input_options" => [
+                            ["name" => "100°", "value" => 100],
+                            ["name" => "101°", "value" => 101],
+                            ["name" => "102°", "value" => 102],
+                            ["name" => "103°", "value" => 103],
+                        ]
+
+                    ],
+                    [
+                        "concern_key" => "fever_duration",
                         "name" => "What duration have you suffered from fever symptoms?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "headache",
                         "name" => "Do you have Headache?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "cough",
                         "name" => "Do you have Cold Cough?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
+                    ],
+                    [
+                        "concern_key" => "cough_duration",
+                        "name" => "How long does your cough last?",
+                        "input_type" => "number"
                     ],
                 ]
             ],
 
             [
-                "name" => "Diarrhea",
-                "description" => "<b class='bold'>Diarrhea</b> occurs when contaminated food or drinks are consumed, leading to illness with symptoms like nausea, vomiting, diarrhea, abdominal pain, fever, and fatigue. It's caused by harmful bacteria, viruses, parasites, or toxins. Prevention involves safe food handling and hygiene practices.<br><b class='bold'>Food poisoning caused</b> by consuming food or beverages contaminated with harmful bacteria, viruses, parasites, or toxins. Contamination can occur during food production, processing, handling, or preparation. Common pathogens responsible for food poisoning include Salmonella, Escherichia coli (E. coli), Campylobacter, Listeria, Staphylococcus aureus, norovirus, hepatitis A virus, Giardia, Cryptosporidium, and toxins produced by bacteria like Clostridium botulinum.",
-                "image_src" => "/Images/Food_Poisoning.png",
+                "name" => "Neck pain",
+                "description" => "<b class='bold'>Neck pain</b> occurs to discomfort or pain in the area of the cervical spine, which includes the bones, muscles, nerves, and other structures of the neck. It can range from mild, temporary discomfort to severe, chronic pain and may be accompanied by stiffness, headaches, or tingling in the shoulders or arms.<br><b class='bold'>Neck pain can be caused</b>  by muscle strain, injury, degenerative diseases, herniated discs, poor posture, nerve compression, infections, and medical conditions like fibromyalgia or rheumatoid arthritis.",
+                "image_src" => "/Images/neckpain.jpg",
                 "created_at" => now(),
                 "updated_at" => now(),
                 "questions" => [
                     [
-                        "name" => "What duration have you suffered from diarrhea symptoms?",
+                        "concern_key" => "neck_pain_duration",
+                        "name" => "What duration have you suffered from neck pain ?",
                         "input_type" => "number"
                     ],
                     [
-                        "name" => "Do you have vomiting?",
+                        "concern_key" => "feel_neck_pain",
+                        "name" => "Do you feel pain when you turning your neck?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
-                        "name" => "Do you have feel stomach pain?",
+                        "concern_key" => "blood_pressure",
+                        "name" => "Is your blood pressure normal?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
-                    [
-                        "name" => "Is blood coming with the stool?",
-                        "input_type" => "radio",
-                        "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
-                        ]
-                    ],
+
                 ]
             ],
 
@@ -94,68 +111,77 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "concern_key" => "migraine_duration",
                         "name" => "How long does your headache last?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "head_pain",
                         "name" => "Are you feel intense throbbing head pain?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "vomiting_with_light_and_sound",
                         "name" => "Do you feel accompanied by nausea and vomiting, as well as sensitivity to light and sound?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
-                        "name" => "Do you have one-sided head pain?",
+                        "concern_key" => "sleeping_problem",
+                        "name" => "Are you having trouble sleeping due to pain?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "head_injury",
                         "name" => "Have you had any head injuries?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                 ]
             ],
+
             [
-                "name" => "Low back pain",
+                "name" => "Back pain",
                 "description" => "<b class='bold'>Low back pain</b> is discomfort in the lower back region, between the bottom of the rib cage and the top of the legs. It can range from mild to severe and may be caused by muscle strains, herniated discs, arthritis, or other factors. Treatment options vary depending on the cause and severity of the pain.<br><b class='bold'>Low back pain</b> can be caused by muscle or ligament strain, herniated discs, degenerative disc disease, spinal stenosis, osteoarthritis, sciatica, spondylolisthesis, traumatic injury, poor posture, or obesity.",
                 "image_src" => "/Images/back_pain.png",
                 "created_at" => now(),
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "concern_key" => "low_back_pain",
                         "name" => "How long does your low back pain last?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "altime_pain",
                         "name" => "Always you feel pain?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "taken_any_pain_medicine",
                         "name" => "Do you eat any medicine for removing pain?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ]
                 ]
@@ -169,40 +195,45 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "concern_key" => "cough_duration",
                         "name" => "How long does your cough last?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "nose_blocked",
                         "name" => "Do you feel like your nose is blocked?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
-                        "name" => "Do  you feel chest pain with caugh?",
+                        "concern_key" => "chest_pain_with_cough",
+                        "name" => "Do  you feel chest pain with cough?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ]
                 ]
             ],
 
             [
-                "name" => "Scabies",
-                "description" => "<b class='bold'>Scabies</b> is a skin infestation caused by the Sarcoptes scabiei mite, leading to intense itching and a rash. It spreads through close contact and can be treated with prescription medications.<br><b class='bold'>Scabies is caused</b> by the microscopic mite Sarcoptes scabiei, which burrows into the skin to lay eggs. It spreads through direct skin-to-skin contact and can also be transmitted through infested bedding, clothing, or furniture.",
-                "image_src" => "/Images/Scabies.webp",
+                "name" => "Itching",
+                "description" => "<b class='bold'>Itching</b>is an uncomfortable and irritating sensation that prompts the desire to scratch the affected area. This sensation can occur anywhere on the body and can be mild or severe. Itching can be a symptom of a wide range of conditions, both dermatological and systemic. <br><b class='bold'>Itching caused</b>of itching are diverse and can include dry skin, which is particularly common in older adults or during winter months when the air is dry. Allergic reactions to substances like pollen, food, or medication can also lead to itching. Skin conditions such as eczema, psoriasis, scabies, and hives are common dermatological causes. Insect bites and stings are another frequent cause of localized itching.Infections, both bacterial and fungal, can result in itchy skin. For example, athlete's foot and ringworm are fungal infections that often cause significant itching. Systemic conditions, such as liver disease, kidney failure, thyroid problems, and certain cancers, can also present itching as a symptom. Additionally, psychological factors, including stress and anxiety, can exacerbate or even cause itching.",
+                "image_src" => "/Images/Itching.webp",
                 "created_at" => now(),
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "concern_key" => "itching_duration",
                         "name" => "How long does your scabies last?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "when_increase",
                         "name" => "When does your scabies mainly occur?",
                         "input_type" => "radio",
                         "input_options" => [
@@ -212,11 +243,12 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "concern_key" => "anyone_affected_has_in_your_family",
                         "name" => "Does anyone else in your householder have scabies?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ]
                 ]
@@ -231,23 +263,26 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "concern_key" => "how_many_times_you_vomiting",
                         "name" => "How many times you vomited?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "stomach_pain",
                         "name" => "Do you have stomach pain?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
-                        "name" => "Do you feel  weak?",
+                        "concern_key" => "blood_pressure",
+                        "name" => "Is your blood pressure normal?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ]
                 ]
@@ -261,27 +296,30 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
-                        "name" => "The burned areas looking red?",
+                        "concern_key" => "is_looking_red",
+                        "name" => "The burned areas looking red & is the burned area size small?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "has_pain",
                         "name" => "Having pain in the burn area?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "has_other_pain_issues",
                         "name" => "Having any problem other than the res & light pain in the burned area?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ]
                 ]
@@ -295,23 +333,26 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "concern_key" => "sore_throat_duration",
                         "name" => "How long does your sore throats last?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "feels_pain",
                         "name" => "Do you feel pain when you eating??",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "red_and_swollen",
                         "name" => "Do yo see Red and swollen tonsils?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ]
                 ],
@@ -324,39 +365,44 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "concern_key" => "symptom_duration",
                         "name" => "How long does your sneeze last?",
                         "input_type" => "number"
                     ],
                     [
+                        "concern_key" => "sneeze_a_lot",
                         "name" => "Did you sneeze a lot?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "nose_broken",
                         "name" => "Do you feel like your nose is blocked?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "has_cough",
                         "name" => "Do you have cough?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ],
                     [
+                        "concern_key" => "has_faver",
                         "name" => "Do you have fever?",
                         "input_type" => "radio",
                         "input_options" => [
-                            ["name" => "Yes", "value" => "yes"],
-                            ["name" => "No", "value" => "no"],
+                            ["name" => "Yes", "value" => 1],
+                            ["name" => "No", "value" => 0],
                         ]
                     ]
                 ]

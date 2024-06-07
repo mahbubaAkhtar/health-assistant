@@ -13,8 +13,12 @@ return new class extends Migration
     {
         Schema::create('prescriptions', function (Blueprint $table) {
             $table->id();
-            $table->string('advice');
-            $table->string('follow_up');
+            $table->string('patient_name');
+            $table->integer('patient_age');
+            $table->enum('patient_gender', ['male', 'female']);
+            $table->text('advice');
+            $table->text('symptom');
+            $table->string('follow_up')->nullable();
             $table->foreignId('consultation_id')->constrained('consultations','id');
             $table->timestamps();
         });

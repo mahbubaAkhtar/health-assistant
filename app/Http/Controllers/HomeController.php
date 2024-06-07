@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\HealthTip;
 use App\Models\Symptom;
-use Illuminate\Http\Request;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class HomeController extends Controller
 {

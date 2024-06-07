@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('generics', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('mg');
+            $table->string('strength');
+            $table->enum('type', ["Tablet", "Syrup", "Capsule"]);
             $table->timestamps();
         });
     }

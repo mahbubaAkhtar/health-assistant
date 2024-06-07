@@ -104,7 +104,7 @@
         <ul class="menu">
             <li class="menu__item"><a class="menu__link" href="{{route('home')}}">Home</a></li>
             <li class="menu__item"><a class="menu__link" href="{{route('about')}}">About</a></li>
-            <li class="menu__item"><a class="menu__link" href="#">Term & Condition</a></li>
+            <li class="menu__item"><a class="menu__link" href="{{route('termsConditions')}}">Terms & Conditions</a></li>
             <li class="menu__item"><a class="menu__link" href="{{route('contact')}}">Contact</a></li>
 
         </ul>

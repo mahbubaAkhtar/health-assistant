@@ -7,9 +7,7 @@
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
-    width: 450px;
-    margin-top: 200px;
-    margin-left: 360px;
+    margin: 35px 262px;
 }
 
 
@@ -34,7 +32,7 @@ h1 {
 }
 
 .one {
-    color: rgb(253, 143, 143);
+    color: rgb(255, 106, 0);
 }
 
 .two {
@@ -42,15 +40,15 @@ h1 {
 }
 
 .three {
-    color: rgb(161, 20, 20);
+    color: rgb(255, 106, 0);
 }
 
 .four {
-    color: rgb(239, 9, 53);
+    color: rgb(255, 106, 0);
 }
 
 .five {
-    color: rgb(43, 135, 255);
+    color: rgb(255, 106, 0);
 }
 
 textarea {

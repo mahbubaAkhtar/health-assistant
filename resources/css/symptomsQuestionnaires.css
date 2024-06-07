@@ -32,9 +32,14 @@ input {
 
 /* Styling specific input types  */
 input[type="text"],
-input[type="number"] {
+input[type="number"]
+ {
     width: 100%;
     margin-left: 0;
+}
+input[type="dropdown"]{
+width: 100%;
+height: 33px;
 }
 
 input[type="textarea"] {

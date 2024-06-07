@@ -11,24 +11,21 @@
 </head>
 
 <body>
-@include('Navbar.navbar')
 
 <div class="container">
-    <h1>Health Assistant</h1>
-    <div class="rating">
-        <span id="rating">0</span>/5
-    </div>
     <div class="stars" id="stars">
         <span class="star" data-value="1">★</span>
         <span class="star" data-value="2">★</span>
         <span class="star" data-value="3">★</span>
         <span class="star" data-value="4">★</span>
         <span class="star" data-value="5">★</span>
+
+        <span id="rating">0</span>/5
     </div>
     <p>Share your review:</p>
     <textarea id="review"
               placeholder="Write your review here">
-		</textarea>
+    </textarea>
     <button id="submit">Submit</button>
     <div class="reviews" id="reviews">
     </div>
@@ -83,7 +80,7 @@
             reviewElement.classList.add("review");
             reviewElement.innerHTML =
                 `<p><strong>Rating: ${userRating}/5</strong></p><p>${review}</p>`;
-            reviewsContainer.appendChild(reviewElement);
+            reviewsContainer.append(reviewElement);
 
             // Reset styles after submitting
             reviewText.value = "";

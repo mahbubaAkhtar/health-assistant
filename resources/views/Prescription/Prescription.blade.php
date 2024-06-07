@@ -17,11 +17,11 @@
             <tr >
                 <td colspan="2">
                     <div class="header">
-                        <div class="logo"><img src="../Images/logo.png"></div>
+                        <div class="logo"><img src="/Images/logo.png"></div>
                         <div class="credentials">
-                            <p>Patient Name : Rohim Mia</p>
-                            <p>Age : 30 </p>
-                            <p>Gender : Male </p>
+                            <p>Patient Name : {{$prescription->patient_name}}</p>
+                            <p>Age : {{$prescription->patient_age}}</p>
+                            <p>Gender : {{$prescription->patient_gender}}</p>
                         </div>
                     </div>
                 </td>
@@ -31,34 +31,30 @@
                     <div class="desease_details">
                         <div class="symptoms">
                             <h4 class="d-header">Symptoms</h4>
-                        <p>Write systom Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda eligendi facilis fugit non, officiis porro provident tempore ullam. Animi autem corporis eaque maxime nesciunt nobis soluta tenetur totam unde ut? Aliquam debitis deleniti dignissimos enim excepturi facere ipsa, laboriosam magnam maiores minima quas quis quod rerum veritatis vitae voluptates voluptatibus?</p>
+                            <ul @style("font-size: 14px")>
+                                <li>{{$prescription->symptom}}</li>
+                            </ul>
                         </div>
                         <div class="advice">
                             <h4 class="d-header">Advice</h4>
-                            <p>Write Advise</p>
+                            {!! $prescription->advice !!}
                         </div>
                     </div>
                 </td>
                 <td  valign="top"><span style="font-size: 2em">R<sub>x</sub></span>
                     <hr/>
-                    <div class="medicine" ><p class="medicine-name"><b>1. &nbsp;&nbsp; Napa 500mg</b></p>
-                        <p>1+1+1 &nbsp; &nbsp; &nbsp; After Meal</p></div>
-                    <div class="medicine" ><p class="medicine-name"><b>2. &nbsp;&nbsp; Alcet</b></p>
-                        <p>1+1+1 &nbsp; &nbsp; &nbsp; Any Time</p></div>
-                    <div class="medicine" ><p class="medicine-name"><b>1. &nbsp;&nbsp; Napa 500mg</b></p>
-                        <p>1+1+1 &nbsp; &nbsp; &nbsp; After Meal</p></div>
-                    <div class="medicine" ><p class="medicine-name"><b>2. &nbsp;&nbsp; Alcet</b></p>
-                        <p>1+1+1 &nbsp; &nbsp; &nbsp; Any Time</p></div>
-                    <div class="medicine" ><p class="medicine-name"><b>1. &nbsp;&nbsp; Napa 500mg</b></p>
-                        <p>1+1+1 &nbsp; &nbsp; &nbsp; After Meal</p></div>
-                    <div class="medicine" ><p class="medicine-name"><b>2. &nbsp;&nbsp; Alcet</b></p>
-                        <p>1+1+1 &nbsp; &nbsp; &nbsp; Any Time</p></div>
-
+                    @foreach($prescription->prescriptionMedicines as $index => $medicine)
+                        <div class="medicine" ><p class="medicine-name"><b>{{$index + 1}}. {{$medicine->generic->type}} &nbsp;{{$medicine->generic->name . ' ' . $medicine->generic->strength}} </b></p>
+                        <p>{{$medicine->genericDose->dose}} &nbsp; &nbsp; &nbsp; {{$medicine->genericDose->duration}}</p></div>
+                    @endforeach
                 </td>
             </tr>
 
             </tbody>
         </table>
+
+
+        @include('Review.review')
     </div>
 </div>
 </body>

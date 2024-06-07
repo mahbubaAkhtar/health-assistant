@@ -11,13 +11,15 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('generic_eligibilities', function (Blueprint $table) {
+        Schema::create('generic_doses', function (Blueprint $table) {
             $table->id();
-            $table->string('concern_key');
-            $table->string('value')->nullable();
-            $table->integer('from_value')->nullable();
-            $table->integer('to_value')->nullable();
             $table->foreignId('generic_id')->constrained('generics','id');
+            $table->string("concern_key");
+            $table->string("value")->nullable();
+            $table->string("from_value")->nullable();
+            $table->string("to_value")->nullable();
+            $table->string("dose");
+            $table->string("duration");
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('generic_eligibilities');
+        Schema::dropIfExists('generic_doses');
     }
 };

@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
     {
         $this->call(SymptomSeeder::class);
         $this->call(HealthTipSeeder::class);
+        $this->call(GenericSeeder::class);
     }
 }
