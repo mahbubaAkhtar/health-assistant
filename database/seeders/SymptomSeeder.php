@@ -91,7 +91,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
-                        "concern_key" => "blood_pressure",
+                        "concern_key" => "blood_pressure_normal",
                         "name" => "Is your blood pressure normal?",
                         "input_type" => "radio",
                         "input_options" => [

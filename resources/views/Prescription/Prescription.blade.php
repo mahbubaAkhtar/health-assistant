@@ -43,9 +43,17 @@
                 </td>
                 <td  valign="top"><span style="font-size: 2em">R<sub>x</sub></span>
                     <hr/>
+                    @php($slNumber = 1)
                     @foreach($prescription->prescriptionMedicines as $index => $medicine)
-                        <div class="medicine" ><p class="medicine-name"><b>{{$index + 1}}. {{$medicine->generic->type}} &nbsp;{{$medicine->generic->name . ' ' . $medicine->generic->strength}} </b></p>
+                        <div class="medicine" ><p class="medicine-name"><b>{{$slNumber}}. {{$medicine->generic->type}} &nbsp;{{$medicine->generic->name . ' ' . $medicine->generic->strength}} </b></p>
                         <p>{{$medicine->genericDose->dose}} &nbsp; &nbsp; &nbsp; {{$medicine->genericDose->duration}}</p></div>
+                        @php($slNumber++)
+
+                        @if($requiredGeneric = $medicine->generic->requiredGeneric)
+                            <div class="medicine" ><p class="medicine-name"><b>{{$slNumber}}. {{$requiredGeneric->type}} &nbsp;{{$requiredGeneric->name . ' ' . $requiredGeneric->strength}} </b></p>
+                            <p>{{$medicine->genericDose->dose}} &nbsp; &nbsp; &nbsp; {{$medicine->genericDose->duration}}</p></div>
+                            @php($slNumber++)
+                        @endif
                     @endforeach
                 </td>
             </tr>

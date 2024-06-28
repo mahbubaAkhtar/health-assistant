@@ -15,7 +15,7 @@
     <div class="content">
         <h2>Terms & Conditions</h2>
         <ul class='description'>User Registration and Login:<br>
-            <li> Below this age if any treatment is take the system or organization is not responsible for it.</li><br>
+            <li> The users need to be 18 plus to use this medical system. Below this age if any treatment is take the system or organization is not responsible for it.</li><br>
             <li>Users must register and log in to access the Health Assistant system.</li><br>
             <li>Personal information provided during registration will be securely stored and used only for health management purposes.</li><br>
         </ul>
