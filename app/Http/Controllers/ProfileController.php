@@ -18,11 +18,41 @@ class ProfileController extends Controller
     public function profile()
     {
         $user = auth()->user();
-        return view('Profile/profile', ['user' => $user]);
+        return view('UserPortal/Profile/profile', ['user' => $user]);
+    }
+
+    public function editProfile()
+    {
+        $user = auth()->user();
+        return view('UserPortal/Profile/editProfile', ['user' => $user]);
+    }
+
+    public function updateProfile(Request $request)
+    {
+        $request->validate([
+            'name' => 'required',
+            'dob' => 'required',
+            'email' => 'required|email',
+            'gender' => 'required|',
+            'critical_health_issue' => 'nullable',
+        ]);
+
+        $user = auth()->user();
+
+        $user->update([
+            'name' => $request->name,
+            'dob' => $request->dob,
+            'email' => $request->email,
+            'gender' => $request->gender,
+            'critical_health_issue' => $request->critical_health_issue,
+        ]);
+
+
+        return redirect('profile');
     }
     public function edit(Request $request): View
     {
-        return view('profile.edit', [
+        return view('UserPortal/profile/edit', [
             'user' => $request->user(),
         ]);
     }

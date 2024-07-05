@@ -21,7 +21,8 @@ class UserSeeder extends Seeder
                "email" => "jedni1907@gmail.com",
                "password" => '$2y$10$RQbBhbgmd4khO3EwXX3uiuD9c4mDR2PIG1YSK2217iwOlWNqaTrgy', //secret,
                "gender" => "Female",
-               "age" => 24,
+               "dob" => "2001-09-19",
+               "critical_health_issue" => "ALLERGIC RHINITIS",
                "created_at" => now(),
                "updated_at" => now()
            ]

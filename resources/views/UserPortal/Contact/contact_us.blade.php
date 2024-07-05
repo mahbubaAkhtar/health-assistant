@@ -9,7 +9,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-@include('Navbar.navbar')
+@include('UserPortal.Navbar.navbar')
 <div class="main_container">
     <div class="container">
         <h2 class="contact-box-mess">Get in touch</h2>

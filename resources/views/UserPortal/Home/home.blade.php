@@ -11,15 +11,15 @@
     @vite("resources/css/home.css")
 </head>
 <body>
-@include('Navbar.navbar')
+@include('UserPortal.Navbar.navbar')
 
 <!--Slider-->
 <div class="slideshow-container">
 
     @foreach($tips as $healthTips)
-    <div class="mySlides fade">
-        <img src="{{$healthTips->image_src}}" style="width:100%; height: 350px">
-    </div>
+        <div class="mySlides fade">
+            <img src="{{$healthTips->image_src}}" style="width:100%; height: 350px">
+        </div>
     @endforeach
 
     <a class="prev" onclick="plusSlides(-1)">❮</a>
@@ -30,7 +30,7 @@
 
 <div style="text-align:center">
     @foreach($tips as $index => $healthTips)
-    <span class="dot" onclick="currentSlide({{$index+1}})"></span>
+        <span class="dot" onclick="currentSlide({{$index+1}})"></span>
     @endforeach
 </div>
 

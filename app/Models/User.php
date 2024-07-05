@@ -3,6 +3,8 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -21,7 +23,8 @@ class User extends Authenticatable
         'email',
         'password',
         'gender',
-        'age'
+        'dob',
+        'critical_health_issue'
     ];
 
     /**
@@ -45,5 +48,16 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public function getAgeAttribute()
+    {
+        $age = null;
+
+        if ($this->dob) {
+            $age = Carbon::create($this->dob)->age;
+        }
+
+        return $age;
     }
 }

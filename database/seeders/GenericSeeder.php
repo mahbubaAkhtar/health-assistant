@@ -298,8 +298,9 @@ class GenericSeeder extends Seeder
                         "value" => "1",
                     ],
                     [
-                        "concern_key" => "vomiting_with_light_and_sound",
-                        "value" => "1",
+                        "concern_key" => "vomiting",
+                        "from_value" => "0",
+                        "to_value" => "3",
                     ],
                     [
                         "concern_key" => "sleeping_problem",
@@ -320,6 +321,82 @@ class GenericSeeder extends Seeder
                     ]
                 ]
             ],
+            [
+                "name" => "Domperidone Maleate",
+                "strength" => "10 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "migraine_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "head_pain",
+                        "value" => "1",
+                    ],
+                    [
+                        "concern_key" => "vomiting",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "sleeping_problem",
+                        "value" => "1",
+                    ],
+                    [
+                        "concern_key" => "head_injury",
+                        "value" => "0",
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "vomiting",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                        "dose" => "1+1+1   - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Clonazepam",
+                "strength" => "0.5 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "migraine_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "head_pain",
+                        "value" => "1",
+                    ],
+                    [
+                        "concern_key" => "vomiting",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "sleeping_problem",
+                        "value" => "1",
+                    ],
+                    [
+                        "concern_key" => "head_injury",
+                        "value" => "0",
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "sleeping_problem",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                        "dose" => "0+0+1   - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ]
         ];
     }
 }

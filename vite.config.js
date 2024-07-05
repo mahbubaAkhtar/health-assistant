@@ -20,6 +20,7 @@ export default defineConfig({
                 'resources/css/prescription.css',
                 'resources/css/review.css',
                 'resources/css/history.css',
+                'resources/css/adminDashboard.css',
             ],
             refresh: true,
         }),

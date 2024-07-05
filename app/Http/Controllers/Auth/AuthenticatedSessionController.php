@@ -13,7 +13,7 @@ class AuthenticatedSessionController extends Controller
 {
     public function login(): View
     {
-        return view('SignInSignUp.signInSignUp');
+        return view('UserPortal/SignInSignUp/signInSignUp');
     }
 
     public function store(LoginRequest $request): RedirectResponse

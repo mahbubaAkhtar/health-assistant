@@ -1,0 +1,30 @@
+
+
+/*dashboard*/
+main{
+    margin-top: 83px;
+    background-color: #ebf6ff;
+    padding: 30px;
+    min-height: calc(45vh);
+}
+
+.cards{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 2rem;
+    margin-top: 1rem;
+}
+.card-single{
+    display: flex;
+    background-color: #fff;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 2px 5px 10px 2px rgb(0 0 0 / 10%);
+}
+
+.card-single:hover{
+    background-color: #668ec4;
+    color: #fff;
+}
+

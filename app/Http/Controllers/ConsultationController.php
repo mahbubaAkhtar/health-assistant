@@ -12,6 +12,6 @@ class ConsultationController extends Controller
         $consultations = Consultation::query() ->where('user_id',auth()->user()->id)->get();
 //        dd($consultations);
 
-        return view('History/history', ['consultations' => $consultations]);
+        return view('UserPortal/History/history', ['consultations' => $consultations]);
     }
 }

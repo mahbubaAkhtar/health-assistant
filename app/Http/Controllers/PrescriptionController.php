@@ -10,7 +10,7 @@ class PrescriptionController extends Controller
     {
         $prescription = Prescription::query()->find($prescriptionId);
 
-        return view('Prescription.prescription', [
+        return view('UserPortal/Prescription/prescription', [
             'prescription' => $prescription
         ]);
     }
@@ -23,7 +23,7 @@ class PrescriptionController extends Controller
             ->orderByDesc('prescriptions.id')
             ->first();
 
-        return view('Prescription.prescription', [
+        return view('UserPortal/Prescription/prescription', [
             'prescription' => $prescription
         ]);
     }

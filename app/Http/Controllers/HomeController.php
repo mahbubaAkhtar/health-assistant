@@ -13,7 +13,7 @@ class HomeController extends Controller
         $tips = HealthTip::all();
         $symptoms = Symptom::query()->where("is_active",true)->get();
 
-        return view('Home/home', [
+        return view('UserPortal/Home/home', [
             'symptoms' => $symptoms,
             'tips'=>$tips
         ]);

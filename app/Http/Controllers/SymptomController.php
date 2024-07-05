@@ -10,7 +10,7 @@ class SymptomController extends Controller
     public function show($id)
     {
         $symptom = Symptom::query()->findOrFail($id);
-        return view('Symptoms/description', ['symptom' => $symptom]);
+        return view('UserPortal/Symptoms/description', ['symptom' => $symptom]);
     }
 
     public function questionsBySymptomId($symptomId)
@@ -23,7 +23,7 @@ class SymptomController extends Controller
 
         $user = auth()->user();
 
-        return view('Symptoms/questions', [
+        return view('UserPortal/Symptoms/questions', [
             'symptom' => $symptom,
             'questions' => $questions,
             'user' => $user

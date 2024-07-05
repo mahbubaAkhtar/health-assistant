@@ -9,7 +9,7 @@
     <title>History</title>
 </head>
 <body>
-@include('Navbar.navbar')
+@include('UserPortal.Navbar.navbar')
 <div class="history-content">
     <span class="history-title">History</span>
     <table id="customers">
@@ -22,14 +22,15 @@
             <th>View Prescription</th>
         </tr>
         @foreach($consultations as $consultation)
-        <tr>
-            <td>{{$consultation->created_at}}</td>
-            <td>{{$consultation->prescription->patient_name}}</td>
-            <td>{{$consultation->prescription->patient_age}}</td>
-            <td>{{$consultation->prescription->patient_gender}}</td>
-            <td>{{$consultation->symptom->name}}</td>
-            <td><a href="{{route('prescription.show', $consultation->prescription->id)}}">Preview Prescription</a> </td>
-        </tr>
+            <tr>
+                <td>{{$consultation->created_at}}</td>
+                <td>{{$consultation->prescription->patient_name}}</td>
+                <td>{{$consultation->prescription->patient_age}}</td>
+                <td>{{$consultation->prescription->patient_gender}}</td>
+                <td>{{$consultation->symptom->name}}</td>
+                <td><a href="{{route('prescription.show', $consultation->prescription->id)}}">Preview Prescription</a>
+                </td>
+            </tr>
         @endforeach
 
     </table>

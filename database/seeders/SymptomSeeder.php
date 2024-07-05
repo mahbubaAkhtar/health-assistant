@@ -125,7 +125,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
-                        "concern_key" => "vomiting_with_light_and_sound",
+                        "concern_key" => "vomiting",
                         "name" => "Do you feel accompanied by nausea and vomiting, as well as sensitivity to light and sound?",
                         "input_type" => "radio",
                         "input_options" => [
@@ -162,7 +162,7 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
-                        "concern_key" => "low_back_pain",
+                        "concern_key" => "back_pain",
                         "name" => "How long does your low back pain last?",
                         "input_type" => "number"
                     ],
