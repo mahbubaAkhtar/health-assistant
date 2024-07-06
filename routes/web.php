@@ -4,7 +4,8 @@ use App\Http\Controllers\AdminPortal\DashboardController;
 use App\Http\Controllers\AdminPortal\UserController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthenticationController;
-use App\Http\Controllers\AdminPortal\ConsultationController;
+use App\Http\Controllers\AdminPortal\ConsultationController as AdminConsultationController;
+use App\Http\Controllers\ConsultationController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\ProfileController;
@@ -68,8 +69,12 @@ require __DIR__ . '/auth.php';
 //admin routes
 Route::prefix('admin')->group(function (){
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('adminDashboard');
-    Route::get('/users',[UserController::class, 'users'])->name('userHistory');
-    Route::get('/consultations',[ConsultationController::class, 'consultations'])->name('userConsultationHistory');
+    Route::get('/consultations',[AdminConsultationController::class, 'consultationHistory'])->name('userConsultationHistory');
+    Route::get('/consultations/{id}/prescription',[AdminConsultationController::class, 'showPrescription'])->name('showPrescription');
+    Route::get('/users',[UserController::class, 'allUsers'])->name('userHistory');
+    Route::get('/users/{id}/profile',[UserController::class, 'showUser'])->name('userProfile');
+    Route::get('/users/{id}/edit-profile', [UserController::class, 'editUser'])->name('edit-profile');
+    Route::post('/users/{id}/update-user', [UserController::class, 'updateUser'])->name('update-user');
 });
 
 

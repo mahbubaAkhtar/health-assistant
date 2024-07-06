@@ -65,16 +65,21 @@
             <th></th>
         </tr>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <a href="">
-                <td><b>Details</b></td>
-            </a>
-        </tr>
+        @foreach($users as $user)
+            <tr>
+                <td>{{$user->name}}</td>
+                <td>{{$user->email}}</td>
+                <td>{{$user->gender ?? "N/A"}}</td> {{-- ?? its null safe operation--}}
+                <td>{{$user->dob ?? "N/A"}}</td>
+                <td>{{$user->weight ?? "N/A"}}</td>
+                <td>
+                    <a href="/admin/users/{{$user->id}}/profile">
+                        <b>See Detail</b>
+                    </a>
+                </td>
+            </tr>>
+
+        @endforeach
 
 
     </table>

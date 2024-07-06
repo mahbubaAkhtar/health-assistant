@@ -57,18 +57,22 @@
     <span class="user-consultation-history-title"><b>User Consultation History</b></span>
     <table id="customers">
         <tr>
+            <th>Date</th>
             <th>User Name</th>
-            <th>User Contact</th>
+            <th>User Email</th>
             <th>Symptom</th>
             <th>prescription</th>
         </tr>
 
-        <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td><a href="#">See prescription</a></td>
-        </tr>
+        @foreach($consultationHistory as $consultation)
+            <tr>
+                <td>{{$consultation->created_at}}</td>
+                <td><a href="/admin/users/{{$consultation->user->id}}/profile">{{$consultation->user->name}}</a></td>
+                <td>{{$consultation->user->email}}</td>
+                <td>{{$consultation->symptom->name}}</td>
+                <td><a href="/admin/consultations/{{$consultation->id}}/prescription">See prescription</a></td>
+            </tr>
+        @endforeach
 
 
     </table>
