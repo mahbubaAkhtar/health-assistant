@@ -105,7 +105,7 @@
             <li class="menu__item"><a class="menu__link" href="{{route('home')}}">Home</a></li>
             <li class="menu__item"><a class="menu__link" href="{{route('about')}}">About</a></li>
             <li class="menu__item"><a class="menu__link" href="{{route('termsConditions')}}">Terms & Conditions</a></li>
-            <li class="menu__item"><a class="menu__link" href="{{route('contact')}}">Contact</a></li>
+            <li class="menu__item"><a class="menu__link" href="{{route('show-contact')}}">Contact</a></li>
 
         </ul>
         <p>&copy;2024 Mahbuba Akhtar | All Rights Reserved</p>
