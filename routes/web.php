@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminPortal\DashboardController;
+use App\Http\Controllers\AdminPortal\LoginController;
 use App\Http\Controllers\AdminPortal\UserController;
 use App\Http\Controllers\AnswerController;
 use App\Http\Controllers\AuthenticationController;
@@ -57,7 +58,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::get('prescription', function () {
         return view('UserPortal/Prescription/prescription');
     })->name('prescription');
-
 });
 require __DIR__ . '/auth.php';
 
@@ -68,13 +68,19 @@ require __DIR__ . '/auth.php';
 
 //admin routes
 Route::prefix('admin')->group(function (){
+//    Route::get('/anyUrlKey', [DashboardController::class, 'controllerFunctionName'])->name('UrlName-anyname');
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('adminDashboard');
     Route::get('/consultations',[AdminConsultationController::class, 'consultationHistory'])->name('userConsultationHistory');
     Route::get('/consultations/{id}/prescription',[AdminConsultationController::class, 'showPrescription'])->name('showPrescription');
+//    Route::get('/admins',[UserController::class, 'allAdmins'])->name('adminHistory');
     Route::get('/users',[UserController::class, 'allUsers'])->name('userHistory');
     Route::get('/users/{id}/profile',[UserController::class, 'showUser'])->name('userProfile');
-    Route::get('/users/{id}/edit-profile', [UserController::class, 'editUser'])->name('edit-profile');
+    Route::get('/users/{id}/edit-profile', [UserController::class, 'editUser'])->name('admin-edit-profile');
     Route::post('/users/{id}/update-user', [UserController::class, 'updateUser'])->name('update-user');
+    Route::get('/login', [LoginController::class, 'showLogin'])->name('admin-login');
+    Route::post('/login', [LoginController::class, 'login'])->name('admin-login');
+    Route::post('/logout', [LoginController::class, 'logout'])->name('admin-logout');
+
 });
 
 

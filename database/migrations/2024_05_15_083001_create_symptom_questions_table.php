@@ -19,6 +19,7 @@ return new class extends Migration
             $table->boolean('input_is_required')->default(true);
             $table->foreignId('symptom_id')->constrained('symptoms','id');
             $table->string('concern_key');
+            $table->json('dependent_concerns')->nullable();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });

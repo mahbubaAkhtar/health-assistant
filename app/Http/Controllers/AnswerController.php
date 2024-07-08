@@ -33,11 +33,13 @@ class AnswerController extends Controller
         // Create answers
         foreach ($request->questions as $question) {
             foreach ($question as $questionId => $questionAnswer) {
-                Answer::query()->create([
-                    'consultation_id' => $consultation->id,
-                    'question_id' => $questionId,
-                    'answer' => $questionAnswer
-                ]);
+                if ($questionAnswer != null) {
+                    Answer::query()->create([
+                        'consultation_id' => $consultation->id,
+                        'question_id' => $questionId,
+                        'answer' => $questionAnswer
+                    ]);
+                }
             }
         }
 
@@ -87,11 +89,7 @@ class AnswerController extends Controller
             'patient_gender' => $user->gender,
             'consultation_id' => $consultation->id,
             'symptom' => $symptom->name,
-            'advice' => "<ul style='font-size: 12px'>
-                            <li>বিশ্রাম  নিবেন </li>
-                            <li>বেশি বেশি পানি খাবেন</li>
-                            <li>তিন দিনের মধ্যেই সুস্থ না হলে ডাক্তারের পরামর্শ নিন</li>
-                         </ul>",
+            'advice' => $this->getAdvice(count($filteredEligibilities), $symptom),
         ]);
 
         foreach ($generics as $generic) {
@@ -103,5 +101,55 @@ class AnswerController extends Controller
         }
 
        return redirect()->route('prescription.show', $prescription->id);
+    }
+
+    private function getAdvice($numberOfMedicine, $symptom): string
+    {
+        if ($numberOfMedicine == 0) {
+            return $this->noMedicineAdvice();
+        }
+
+        if ($symptom->name == 'Itching') {
+            return $this->itchingAdvice();
+        }
+
+        if ($symptom->name == 'Sore throat') {
+            return $this->soreThroatAdvice();
+        }
+
+        return $this->generalAdvice();
+    }
+
+    private function itchingAdvice()
+    {
+        return "<ul style='font-size: 12px'>
+                            <li>বিশ্রাম  নিবেন </li>
+                            <li>এলার্জি জাতীয় খাবার খাবেন না </li>
+                            <li>সাত দিনের মধ্যেই সুস্থ না হলে ডাক্তারের পরামর্শ নিন</li>
+                         </ul>";
+    }
+
+    private function soreThroatAdvice()
+    {
+        return "<ul style='font-size: 12px'>
+                            <li>বিশ্রাম  নিবেন </li>
+                            <li>গরম পানি ও লবণ দিয়ে বেশি বেশি গার্গিল করুন</li>
+                            <li>তিন দিনের মধ্যেই সুস্থ না হলে ডাক্তারের পরামর্শ নিন</li>
+                         </ul>";
+    }
+
+    private function generalAdvice()
+    {
+        return "<ul style='font-size: 12px'>
+                            <li>বিশ্রাম  নিবেন </li>
+                            <li>তিন দিনের মধ্যেই সুস্থ না হলে ডাক্তারের পরামর্শ নিন</li>
+                         </ul>";
+    }
+
+    private function noMedicineAdvice()
+    {
+        return "<ul style='font-size: 12px'>
+                  <li>দুঃখিত , আপনার চিকিৎসা আমাদের প্ল্যাটফর্মে দেওয়া সম্ভব হচ্ছে না। দয়া করে ডাক্তারের পরামর্শ নিন।</li>
+                </ul>";
     }
 }

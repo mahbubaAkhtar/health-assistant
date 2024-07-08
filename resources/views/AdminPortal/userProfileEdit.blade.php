@@ -12,7 +12,7 @@
         /* Main */
         .main {
             margin-top: 2%;
-            margin-left: 20%;
+            margin-left: 304px;
             font-size: 28px;
             padding: 0 10px;
             width: 58%;

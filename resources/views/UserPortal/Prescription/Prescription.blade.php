@@ -11,7 +11,8 @@
 <body>
 
 <div class="wrapper">
-    <div class="prescription_form">
+    @if($prescription)
+        <div class="prescription_form">
         <table class="prescription" border="1">
             <tbody>
             <tr>
@@ -68,6 +69,9 @@
 
         @include('UserPortal.Review.review')
     </div>
+    @else
+        <h1>No prescription, Because not taken any consultation</h1>
+    @endif
 </div>
 </body>
 </html>

@@ -22,11 +22,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "weight",
                         "name" => "what's your weight?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "temperature",
                         "name" => "what's your temperature?",
                         "input_type" => "dropdown",
@@ -39,11 +41,13 @@ class SymptomSeeder extends Seeder
 
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "fever_duration",
                         "name" => "What duration have you suffered from fever symptoms?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "headache",
                         "name" => "Do you have Headache?",
                         "input_type" => "radio",
@@ -53,7 +57,8 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
-                        "concern_key" => "cough",
+                        "input_is_required" => 1,
+                        "concern_key" => "have_cough",
                         "name" => "Do you have Cold Cough?",
                         "input_type" => "radio",
                         "input_options" => [
@@ -62,7 +67,11 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
-                        "concern_key" => "cough_duration",
+                        "input_is_required" => 0,
+                        "dependent_concerns" => [
+                            "have_cough" => 1,
+                        ],
+                        "concern_key" => "fever_with_cough_duration",
                         "name" => "How long does your cough last?",
                         "input_type" => "number"
                     ],
@@ -77,11 +86,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "neck_pain_duration",
                         "name" => "What duration have you suffered from neck pain ?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "feel_neck_pain",
                         "name" => "Do you feel pain when you turning your neck?",
                         "input_type" => "radio",
@@ -91,6 +102,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "blood_pressure_normal",
                         "name" => "Is your blood pressure normal?",
                         "input_type" => "radio",
@@ -111,11 +123,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "migraine_duration",
                         "name" => "How long does your headache last?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "head_pain",
                         "name" => "Are you feel intense throbbing head pain?",
                         "input_type" => "radio",
@@ -125,6 +139,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "vomiting",
                         "name" => "Do you feel accompanied by nausea and vomiting, as well as sensitivity to light and sound?",
                         "input_type" => "radio",
@@ -134,6 +149,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "sleeping_problem",
                         "name" => "Are you having trouble sleeping due to pain?",
                         "input_type" => "radio",
@@ -143,6 +159,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "head_injury",
                         "name" => "Have you had any head injuries?",
                         "input_type" => "radio",
@@ -162,11 +179,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "back_pain",
                         "name" => "How long does your low back pain last?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "altime_pain",
                         "name" => "Always you feel pain?",
                         "input_type" => "radio",
@@ -176,6 +195,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "taken_any_pain_medicine",
                         "name" => "Do you eat any medicine for removing pain?",
                         "input_type" => "radio",
@@ -195,11 +215,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "cough_duration",
                         "name" => "How long does your cough last?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "nose_blocked",
                         "name" => "Do you feel like your nose is blocked?",
                         "input_type" => "radio",
@@ -209,6 +231,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "chest_pain_with_cough",
                         "name" => "Do  you feel chest pain with cough?",
                         "input_type" => "radio",
@@ -228,11 +251,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "itching_duration",
                         "name" => "How long does your scabies last?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "when_increase",
                         "name" => "When does your scabies mainly occur?",
                         "input_type" => "radio",
@@ -243,6 +268,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "anyone_affected_has_in_your_family",
                         "name" => "Does anyone else in your householder have scabies?",
                         "input_type" => "radio",
@@ -263,11 +289,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "how_many_times_you_vomiting",
                         "name" => "How many times you vomited?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "stomach_pain",
                         "name" => "Do you have stomach pain?",
                         "input_type" => "radio",
@@ -277,6 +305,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "blood_pressure",
                         "name" => "Is your blood pressure normal?",
                         "input_type" => "radio",
@@ -296,6 +325,7 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "is_looking_red",
                         "name" => "The burned areas looking red & is the burned area size small?",
                         "input_type" => "radio",
@@ -305,6 +335,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "has_pain",
                         "name" => "Having pain in the burn area?",
                         "input_type" => "radio",
@@ -314,6 +345,7 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "has_other_pain_issues",
                         "name" => "Having any problem other than the res & light pain in the burned area?",
                         "input_type" => "radio",
@@ -333,20 +365,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "sore_throat_duration",
                         "name" => "How long does your sore throats last?",
                         "input_type" => "number"
                     ],
                     [
-                        "concern_key" => "feels_pain",
-                        "name" => "Do you feel pain when you eating??",
-                        "input_type" => "radio",
-                        "input_options" => [
-                            ["name" => "Yes", "value" => 1],
-                            ["name" => "No", "value" => 0],
-                        ]
-                    ],
-                    [
+                        "input_is_required" => 1,
                         "concern_key" => "red_and_swollen",
                         "name" => "Do yo see Red and swollen tonsils?",
                         "input_type" => "radio",
@@ -365,11 +390,13 @@ class SymptomSeeder extends Seeder
                 "updated_at" => now(),
                 "questions" => [
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "symptom_duration",
                         "name" => "How long does your sneeze last?",
                         "input_type" => "number"
                     ],
                     [
+                        "input_is_required" => 1,
                         "concern_key" => "sneeze_a_lot",
                         "name" => "Did you sneeze a lot?",
                         "input_type" => "radio",
@@ -379,7 +406,8 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
-                        "concern_key" => "nose_broken",
+                        "input_is_required" => 1,
+                        "concern_key" => "nose_blocken",
                         "name" => "Do you feel like your nose is blocked?",
                         "input_type" => "radio",
                         "input_options" => [
@@ -388,7 +416,8 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
-                        "concern_key" => "has_cough",
+                        "input_is_required" => 1,
+                        "concern_key" => "for_allergic_rhinitis_has_cough",
                         "name" => "Do you have cough?",
                         "input_type" => "radio",
                         "input_options" => [
@@ -397,7 +426,8 @@ class SymptomSeeder extends Seeder
                         ]
                     ],
                     [
-                        "concern_key" => "has_faver",
+                        "input_is_required" => 1,
+                        "concern_key" => "for_allergic_rhinitis_has_fever",
                         "name" => "Do you have fever?",
                         "input_type" => "radio",
                         "input_options" => [

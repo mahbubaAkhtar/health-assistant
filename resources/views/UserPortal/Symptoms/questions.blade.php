@@ -38,31 +38,34 @@
 
             @foreach($questions as $question)
                 @php($inputKey = 'questions[][' . $question->id . ']')
-                <label for="{{'input-' .$question->id}}">{{$question->name}}</label><br>
+                <label for="{{'input-' .$question->id}}">
+                    {{$question->name}}
+                    @if($question->input_is_required)<span style="color: red">*</span> @endif
+                </label><br>
 
                 @if($question->input_type == 'dropdown')
-                    <select @style("width: 100%;height: 33px;") name="{{$inputKey}}" required
+                    <select @style("width: 100%;height: 33px;") name="{{$inputKey}}" @if($question->input_is_required) required @endif
                             id="{{'input-' .$question->id}}">
                         @foreach($question->input_options as $option)
                             <option value="{{$option['value']}}">{{$option['name']}}</option>
                         @endforeach
                     </select><br>
                 @elseif($question->input_type == 'text')
-                    <input type="text" id="{{'input-' .$question->id}}" name="{{$inputKey}}" required><br>
+                    <input type="text" id="{{'input-' .$question->id}}" name="{{$inputKey}}" @if($question->input_is_required) required @endif><br>
 
                 @elseif($question->input_type == 'number')
-                    <input type="number" id="{{'input-' .$question->id}}" name="{{$inputKey}}" required
+                    <input type="number" id="{{'input-' .$question->id}}" name="{{$inputKey}}" @if($question->input_is_required) required @endif
                            value="{{ $question->concern_key == 'weight' ? $user->weight : '' }}"><br>
 
                 @elseif($question->input_type == 'radio')
                     @foreach($question->input_options as $option)
                         <input type="radio" id="{{'input-' . $option['value'] . $question->id}}" name="{{$inputKey}}"
-                               value="{{$option['value']}}">
+                               value="{{$option['value']}}" @if($question->input_is_required) required @endif>
                         <label for="{{'input-' . $option['value'] . $question->id}}">{{$option['name']}}</label><br>
                     @endforeach
 
                 @elseif($question->input_type == 'textarea')
-                    <textarea id="{{'input-' .$question->id}}" name="{{$inputKey}}"><br> </textarea>
+                    <textarea id="{{'input-' .$question->id}}" name="{{$inputKey}}" @if($question->input_is_required) required @endif><br> </textarea>
                 @endif
             @endforeach
 

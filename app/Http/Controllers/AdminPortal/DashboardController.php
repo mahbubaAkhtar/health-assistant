@@ -10,8 +10,14 @@ class DashboardController extends Controller
 {
     public function index()
     {
-        $userCount= User::query()->count();
+        $userCount= User::query()->where('is_admin','=',0)->count();
         $consultationCount=Consultation::query()->count();
-        return view('AdminPortal/dashboard',["userCount"=>$userCount,"consultationCount"=>$consultationCount]);
+        $adminCount=User::query()->where('is_admin','=',1)->count();
+
+        return view('AdminPortal/dashboard',[
+            "userCount"=>$userCount,
+            "consultationCount"=>$consultationCount,
+            "adminCount"=>$adminCount,
+        ]);
     }
 }

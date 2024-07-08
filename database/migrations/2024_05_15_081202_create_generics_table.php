@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->unsignedInteger('required_with_generic_id')->nullable();
             $table->string('strength');
-            $table->enum('type', ["Tablet", "Syrup", "Capsule", "Gel"]);
+            $table->enum('type', ["Tablet", "Syrup", "Capsule", "Gel","Cream","Drop"]);
             $table->timestamps();
         });
     }

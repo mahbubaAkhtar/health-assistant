@@ -10,6 +10,7 @@ class SymptomQuestion extends Model
     use HasFactory;
 
     protected $casts = [
-        'input_options' => 'array'
+        'input_options' => 'array',
+        'dependent_concerns' => 'array'
     ];
 }

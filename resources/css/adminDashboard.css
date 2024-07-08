@@ -2,7 +2,8 @@
 
 /*dashboard*/
 main{
-    margin-top: 83px;
+    margin-top: 73px;
+    margin-left: 285px;
     background-color: #ebf6ff;
     padding: 30px;
     min-height: calc(45vh);
@@ -10,7 +11,7 @@ main{
 
 .cards{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 2rem;
     margin-top: 1rem;
 }
@@ -27,4 +28,3 @@ main{
     background-color: #668ec4;
     color: #fff;
 }
-

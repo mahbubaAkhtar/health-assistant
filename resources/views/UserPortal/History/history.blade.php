@@ -21,6 +21,7 @@
             <th>Symptom Name</th>
             <th>View Prescription</th>
         </tr>
+        @if(count($consultations) >0)
         @foreach($consultations as $consultation)
             <tr>
                 <td>{{$consultation->created_at}}</td>
@@ -32,6 +33,10 @@
                 </td>
             </tr>
         @endforeach
+        @else
+            <p>No History, Because not taken any consultation</p>
+        @endif
+
 
     </table>
 </div>

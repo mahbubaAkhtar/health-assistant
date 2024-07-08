@@ -67,6 +67,7 @@
             <li><a href="/admin/dashboard" ><i class='bx bxs-dashboard'></i>Dashboard</a></li>
             <li><a href="/admin/users"><i class='bx bx-user-circle'></i>User</a></li>
             <li><a href="/admin/consultations"><i class='bx bx-user-circle'></i>Consultation</a></li>
+{{--            <li><a href="/admin/admins"><i class='bx bx-user-circle'></i>Admin</a></li>--}}
         </ul>
     </div>
 </div>

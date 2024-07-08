@@ -6,18 +6,18 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>User History</title>
+    <title>Admin History</title>
     <style>
         /*font style*/
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
 
-        .user-history-content {
+        .admin-history-content {
             margin-top: 95px;
             margin-left: 300px;
             padding: 8px;
         }
 
-        .user-history-title {
+        .admin-history-title {
             padding-bottom: 10px;
             font-size: 20px;
             margin-left: 46%;
@@ -55,8 +55,8 @@
 <body>
 @include('AdminPortal.adminSidebar')
 @include('AdminPortal.adminNavbar')
-<div class="user-history-content">
-    <span class="user-history-title"><b>User History</b></span>
+<div class="admin-history-content">
+    <span class="admin-history-title"><b>Admin History</b></span>
     <table id="customers">
         <tr>
             <th>Name</th>
@@ -64,25 +64,19 @@
             <th>Gender</th>
             <th>Date of Birth</th>
             <th>weight</th>
-            <th></th>
         </tr>
 
-        @foreach($users as $user)
+        @foreach($admins as $admin)                {{--@foreach($controllerkey as $anyvariable)--}}
             <tr>
-                <td>{{$user->name}}</td>
-                <td>{{$user->email}}</td>
-                <td>{{$user->gender ?? "N/A"}}</td> {{-- ?? its null safe operation--}}
-                <td>{{$user->dob ?? "N/A"}}</td>
-                <td>{{$user->weight ?? "N/A"}}</td>
-                <td>
-                    <a href="/admin/users/{{$user->id}}/profile">
-                        <b>See Detail</b>
-                    </a>
-                </td>
+                <td>{{$admin->name}}</td>          {{--<td>{{$anyvariable->name}}</td>--}}
+                <td>{{$admin->email}}</td>
+                <td>{{$admin->gender ?? "N/A"}}</td> {{-- ?? its null safe operation--}}
+                <td>{{$admin->dob ?? "N/A"}}</td>
+                <td>{{$admin->weight ?? "N/A"}}</td>
+
             </tr>
 
         @endforeach
-
 
     </table>
 </div>

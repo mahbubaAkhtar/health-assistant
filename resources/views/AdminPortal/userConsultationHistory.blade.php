@@ -5,20 +5,22 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>User Consultation History</title>
     <style>
         /*font style*/
         @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,600&display=swap');
 
         .user-consultation-history-content {
-            margin-top: 80px;
+            margin-top: 95px;
+            margin-left: 300px;
             padding: 8px;
         }
 
         .user-consultation-history-title {
             padding-bottom: 10px;
             font-size: 20px;
-            margin-left: 42%;
+            margin-left: 43%;
         }
 
         #customers {
@@ -70,7 +72,7 @@
                 <td><a href="/admin/users/{{$consultation->user->id}}/profile">{{$consultation->user->name}}</a></td>
                 <td>{{$consultation->user->email}}</td>
                 <td>{{$consultation->symptom->name}}</td>
-                <td><a href="/admin/consultations/{{$consultation->id}}/prescription">See prescription</a></td>
+                <td><a href="/admin/consultations/{{$consultation->id}}/prescription"><b>See prescription</b></a></td>
             </tr>
         @endforeach
 

@@ -8,9 +8,16 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+    public function allAdmins()
+    {
+//       anyvariable $x =Model::query()->where('is_admin','=',1)->get();
+        $admins=User::query()->where('is_admin','=',1)->get();
+//        return view('FolderName/blade file',["anykey"=>anyvariable $x]);
+        return view('AdminPortal/adminHistory',["admins"=>$admins]);
+    }
     public function allUsers()
     {
-        $users = User::query()->get();
+        $users = User::query()->where('is_admin','=',0)->get();
         return view('AdminPortal/userHistory',["users" => $users]);
     }
 
@@ -48,6 +55,7 @@ class UserController extends Controller
         ]);
 
 
+//        return redirect("userprofile route");
         return redirect("/admin/users/".$user->id."/profile");
     }
 }

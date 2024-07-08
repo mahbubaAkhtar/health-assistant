@@ -12,7 +12,7 @@
         /* Main */
         .main {
             margin-top: 2%;
-            margin-left: 20%;
+            margin-left: 304px;
             font-size: 28px;
             padding: 0 10px;
             width: 58%;
@@ -60,7 +60,7 @@
 <div class="main">
     <div class="card">
         <div class="card-body">
-            <a href="/admin/users/{{$user->id}}}/edit-profile"><i class="fa fa-pen fa-xs edit"></i></a>
+            <a href="/admin/users/{{$user->id}}}/admin-edit-profile"><i class="fa fa-pen fa-xs edit"></i></a>
             <table>
                 <tbody>
                 <tr>

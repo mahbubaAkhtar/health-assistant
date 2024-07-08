@@ -29,9 +29,15 @@
             </div>
         </div>
 
-    </div>
-    </div>
+{{--        <div class="card-single">--}}
+{{--            <div>--}}
+{{--                <h2>{{$adminCount}}</h2>--}}
+{{--                <a href="/admin/admins"><h2>Total Admin</h2></a>--}}
+{{--            </div>--}}
+{{--        </div>--}}
 
+    </div>
+    </div>
 </main>
 </div>
 </body>

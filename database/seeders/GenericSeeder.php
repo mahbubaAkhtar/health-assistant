@@ -62,7 +62,7 @@ class GenericSeeder extends Seeder
         $dependentGenerics = Generic::query()->where('required_with_generic_id', 1)->get();
 
         foreach ($dependentGenerics as $generic) {
-            if ($generic->name == 'Tolfenamic acid') {
+            if( in_array($generic->name, ['Tolfenamic acid', 'Tiemonium Methylsulphate', 'Aceclofenac'])) {
                 $dependentGeneric = Generic::query()->where('name', 'Rabeprazole Sodium')->first();
 
                 if ($dependentGeneric) {
@@ -102,7 +102,7 @@ class GenericSeeder extends Seeder
                         "concern_key" => "fever_duration",
                         "from_value" => "0",
                         "to_value" => "3",
-                        "dose" => "1+1+1",
+                        "dose" => "1+1+1 - After meal",
                         "duration" => "3 days"
                     ]
                 ]
@@ -132,7 +132,7 @@ class GenericSeeder extends Seeder
                         "concern_key" => "fever_duration",
                         "from_value" => "0",
                         "to_value" => "3",
-                        "dose" => "1+1+1",
+                        "dose" => "1+1+1 - After meal",
                         "duration" => "3 days"
                     ]
                 ]
@@ -163,32 +163,12 @@ class GenericSeeder extends Seeder
                         "concern_key" => "fever_duration",
                         "from_value" => "0",
                         "to_value" => "3",
-                        "dose" => "1+1+1",
+                        "dose" => "1+1+1 - After meal",
                         "duration" => "3 days"
                     ]
                 ]
             ],
 
-            [
-                "name" => "Fexofenadine Hydrochloride",
-                "strength" => "120 mg",
-                "type" => "Tablet",
-                "generic_eligibilities" => [
-                    [
-                        "concern_key" => "cough_duration",
-                        "from_value" => "0",
-                        "to_value" => "7",
-                    ]
-                ],
-                "generic_doses" => [
-                    [
-                        "concern_key" => "cough",
-                        "value" => "1",
-                        "dose" => "0+0+1",
-                        "duration" => "7 days"
-                    ]
-                ]
-            ],
 
             [
                 "name" => "Rabeprazole Sodium",
@@ -219,7 +199,36 @@ class GenericSeeder extends Seeder
                         "concern_key" => "neck_pain_duration",
                         "from_value" => "0",
                         "to_value" => "3",
-                        "dose" => "1+0+1   - Before meal",
+                        "dose" => "1+0+1 - Before meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Naproxen Sodium + Esomeprazole Magnesium",
+                "strength" => "500 mg+20 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "back_pain",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "altime_pain",
+                        "value" => "1",
+                    ],
+                    [
+                        "concern_key" => "taken_any_pain_medicine",
+                        "value" => "0",
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "neck_pain_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                        "dose" => "1+0+1 - Before meal",
                         "duration" => "3 days"
                     ]
                 ]
@@ -248,7 +257,7 @@ class GenericSeeder extends Seeder
                         "concern_key" => "neck_pain_duration",
                         "from_value" => "0",
                         "to_value" => "3",
-                        "dose" => "1+0+1   - After meal",
+                        "dose" => "1+0+1 - After meal",
                         "duration" => "3 days"
                     ]
                 ]
@@ -297,26 +306,13 @@ class GenericSeeder extends Seeder
                         "concern_key" => "head_pain",
                         "value" => "1",
                     ],
-                    [
-                        "concern_key" => "vomiting",
-                        "from_value" => "0",
-                        "to_value" => "3",
-                    ],
-                    [
-                        "concern_key" => "sleeping_problem",
-                        "value" => "1",
-                    ],
-                    [
-                        "concern_key" => "head_injury",
-                        "value" => "0",
-                    ]
                 ],
                 "generic_doses" => [
                     [
                         "concern_key" => "migraine_duration",
                         "from_value" => "0",
                         "to_value" => "3",
-                        "dose" => "1+0+1   - After meal",
+                        "dose" => "1+0+1 - After meal",
                         "duration" => "3 days"
                     ]
                 ]
@@ -326,35 +322,17 @@ class GenericSeeder extends Seeder
                 "strength" => "10 mg",
                 "type" => "Tablet",
                 "generic_eligibilities" => [
-                    [
-                        "concern_key" => "migraine_duration",
-                        "from_value" => "0",
-                        "to_value" => "3",
-                    ],
-                    [
-                        "concern_key" => "head_pain",
-                        "value" => "1",
-                    ],
+
                     [
                         "concern_key" => "vomiting",
-                        "from_value" => "0",
-                        "to_value" => "3",
-                    ],
-                    [
-                        "concern_key" => "sleeping_problem",
                         "value" => "1",
                     ],
-                    [
-                        "concern_key" => "head_injury",
-                        "value" => "0",
-                    ]
                 ],
                 "generic_doses" => [
                     [
                         "concern_key" => "vomiting",
-                        "from_value" => "0",
-                        "to_value" => "3",
-                        "dose" => "1+1+1   - After meal",
+                        "value" => "1",
+                        "dose" => "1+1+1 - After meal",
                         "duration" => "3 days"
                     ]
                 ]
@@ -364,39 +342,359 @@ class GenericSeeder extends Seeder
                 "strength" => "0.5 mg",
                 "type" => "Tablet",
                 "generic_eligibilities" => [
-                    [
-                        "concern_key" => "migraine_duration",
-                        "from_value" => "0",
-                        "to_value" => "3",
-                    ],
-                    [
-                        "concern_key" => "head_pain",
-                        "value" => "1",
-                    ],
-                    [
-                        "concern_key" => "vomiting",
-                        "from_value" => "0",
-                        "to_value" => "3",
-                    ],
+
                     [
                         "concern_key" => "sleeping_problem",
                         "value" => "1",
                     ],
+
+                ],
+                "generic_doses" => [
                     [
-                        "concern_key" => "head_injury",
+                        "concern_key" => "sleeping_problem",
+                        "value" => "1",
+                        "dose" => "0+0+1 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Ambroxol Hydrochloride",
+                "strength" => "100ml",
+                "type" => "Syrup",
+                "generic_eligibilities" => [
+
+                    [
+                        "concern_key" => "fever_with_cough_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "fever_with_cough_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                        "dose" => "2+2+2 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ],
+            ],
+            [
+                "name" => "Ambroxol Hydrochloride",
+                "strength" => "100ml",
+                "type" => "Syrup",
+                "generic_eligibilities" => [
+
+                    [
+                        "concern_key" => "cough_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "chest_pain_with_cough",
+                        "value" => "0",
+                    ]
+
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "cough_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                        "dose" => "2+2+2 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ],
+            ],
+            [
+                "name" => "Ambroxol Hydrochloride",
+                "strength" => "100ml",
+                "type" => "Syrup",
+                "generic_eligibilities" => [
+
+                    [
+                        "concern_key" => "for_allergic_rhinitis_has_cough",
+                        "value" => "1",
+                    ]
+
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "for-allergic rhinitis-has_cough",
+                        "value" => "1",
+                        "dose" => "2+2+2 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Fexofenadine Hydrochloride",
+                "strength" => "120 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "fever-with-cough_duration",
+                        "from_value" => "0",
+                        "to_value" => "7",
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "fever-with-cough_duration",
+                        "value" => "1",
+                        "dose" => "0+0+1 - After meal",
+                        "duration" => "7 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Fexofenadine Hydrochloride",
+                "strength" => "120 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "nose_blocked",
+                        "value" => "1"
+
+                    ],
+                    [
+                        "concern_key" => "chest_pain_with_cough",
                         "value" => "0",
                     ]
                 ],
                 "generic_doses" => [
                     [
-                        "concern_key" => "sleeping_problem",
-                        "from_value" => "0",
-                        "to_value" => "3",
-                        "dose" => "0+0+1   - After meal",
+                        "concern_key" => "nose_blocked",
+                        "value" => "1",
+                        "dose" => "0+0+1 - After meal",
                         "duration" => "3 days"
                     ]
                 ]
-            ]
+            ],
+            [
+                "name" => "Fexofenadine Hydrochloride",
+                "strength" => "120 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "symptom_duration",
+                        "from_value" => "0",
+                        "to_value" => "7",
+
+                    ],
+                    [
+                        "concern_key" => "sneeze_a_lot",
+                        "value" => "1",
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "symptom_duration",
+                        "value" => "1",
+                        "dose" => "0+0+1 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+
+            [
+                "name" => "Levocetirizine Dihydrochloride",
+                "strength" => "5 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "itching_duration",
+                        "from_value" => "0",
+                        "to_value" => "7",
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "itching_duration",
+                        "from_value" => "0",
+                        "to_value" => "7",
+                        "dose" => "0+0+1 - After meal",
+                        "duration" => "7 days"
+                    ]
+                ]
+            ],
+
+            [
+                "name" => "Domperidone Maleate",
+                "strength" => "10 mg",
+                "type" => "Tablet",
+            ],
+            [
+                "name" => " Ondansetron ",
+                "strength" => "8 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "how_many_times_you_vomiting",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "blood_pressure",
+                        "value" => "1"
+
+                    ],
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "how_many_times_you_vomiting",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                        "dose" => "1+1+1 - Before  meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Tiemonium Methylsulphate",
+                "strength" => "50 mg",
+                "type" => "Tablet",
+                "required_with_generic_id" => 1,
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "stomach_pain",
+                        "value" => "1"
+
+                    ],
+                    [
+                        "concern_key" => "blood_pressure",
+                        "value" => "1"
+
+                    ],
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "stomach_pain",
+                        "value" => "1",
+                        "dose" => "1+1+1 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+
+            [
+                "name" => "Paracetamol  ",
+                "strength" => "500 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "has_pain",
+                        "value" => "1"
+
+                    ],
+                    [
+                        "concern_key" => "has_other_pain_issues",
+                        "value" => "0"
+
+                    ],
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "has_pain",
+                        "value" => "1",
+                        "dose" => "1+1+1 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Paracetamol  ",
+                "strength" => "500 mg",
+                "type" => "Tablet",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "for_allergic_rhinitis_has_fever",
+                        "value" => "1"
+
+                    ],
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "for_allergic_rhinitis_has_fever",
+                        "value" => "1",
+                        "dose" => "1+1+1 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Silver Sulfadiazine",
+                "strength" => "1%",
+                "type" => "Cream",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "is_looking_red",
+                        "value" => "1"
+
+                    ],
+                    [
+                        "concern_key" => "has_other_pain_issues",
+                        "value" => "0"
+
+                    ],
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "is_looking_red",
+                        "value" => "1",
+                        "dose" => "First wash the affected area with water. Then use Three or Four times a day",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Aceclofenac",
+                "strength" => "100 mg",
+                "type" => "Tablet",
+                "required_with_generic_id" => 1,
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "sore_throat_duration",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                    ],
+                    [
+                        "concern_key" => "red_and_swollen",
+                        "value" => "0",
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "feels_pain",
+                        "from_value" => "0",
+                        "to_value" => "3",
+                        "dose" => "1+0+1 - After meal",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
+            [
+                "name" => "Oxymetazoline Hydrochloride ",
+                "strength" => "0.05%",
+                "type" => "Drop",
+                "generic_eligibilities" => [
+                    [
+                        "concern_key" => "nose_blocken",
+                        "value" => "1"
+
+                    ]
+                ],
+                "generic_doses" => [
+                    [
+                        "concern_key" => "nose_blocken",
+                        "value" => "1",
+                        "dose" => " 2+2+2 - After Six hours",
+                        "duration" => "3 days"
+                    ]
+                ]
+            ],
         ];
     }
 }
