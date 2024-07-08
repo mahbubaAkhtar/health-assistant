@@ -11,6 +11,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PrescriptionController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\SymptomController;
+use App\Http\Controllers\UserPortal\ContactUsController;
 use Illuminate\Support\Facades\Route;
 
 //Route::get('/', [create_controller_nameController::class, 'function_name'])->name('route_name');
@@ -34,10 +35,9 @@ Route::middleware(['auth', 'verified'])->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('contact_us', [ContactUsController::class, 'showContact'])->name('show-contact');
+    Route::post('contact_us', [ContactUsController::class, 'contactStore'])->name('contact-store');
 
-    Route::get('/contact_us', function () {
-        return view('UserPortal/Contact/contact_us');
-    })->name('contact');
 
     Route::get('/about', function () {
         return view('UserPortal/About/about');

@@ -15,20 +15,24 @@
         <h2 class="contact-box-mess">Get in touch</h2>
         <p>Feel free to contact us about anything related to<span class="contact-box-mess"><b>Health Issue </b></span>
             OR <span class="contact-box-mess"><b>System's Issue</b></span></p>
-        <form class="contact-form">
+        <form class="contact-form" method="POST" action="/contact_us">
+            @csrf
             <div class="input-area">
-                <input type="text" placeholder="Your name"/>
+                <input type="text" placeholder="Your name" name="name" value="{{$user->name}}"/>
             </div>
             <div class="input-area">
-                <input type="email" placeholder="Email address"/>
+                <input type="email" placeholder="Email address" name="email" value="{{$user->email}}"/>
             </div>
             <div class="input-area">
-                <input type="text" placeholder="Subject"/>
+                <input type="text" placeholder="Subject" name="subject"/>
             </div>
             <div class="input-area h-80">
-                <textarea placeholder="Your message"></textarea>
+                <textarea placeholder="Your message" name="message"></textarea>
             </div>
-            <button class="sendbtn">Send</button>
+            <button type="submit" class="sendbtn">Send</button>
+            @if (session('message'))
+                <div class="alert">{{ session('message') }}</div>
+            @endif
         </form>
     </div>
 </div>

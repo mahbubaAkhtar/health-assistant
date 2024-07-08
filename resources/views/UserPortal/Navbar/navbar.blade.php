@@ -32,7 +32,7 @@
                         </div>
                     </section>
                     <li><a href="{{ route('home') }}" class="link" target="_parent"><i class='nav-menu-icon bx bx-home'></i> HOME</a></li>
-                    <li><a href="{{ route('contact') }}" target="_parent" class="link"><i class='nav-menu-icon bx bxs-phone-call'></i> CONTACT</a> </li>
+                    <li><a href="{{ route('show-contact') }}" target="_parent" class="link"><i class='nav-menu-icon bx bxs-phone-call'></i> CONTACT</a> </li>
                     <li class="dropdown">
                         <input type="checkbox" id="profile-dropdown-toggle" class="dropdown-toggle" >
 

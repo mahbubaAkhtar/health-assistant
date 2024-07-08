@@ -20,7 +20,7 @@
     <h2>Profile</h2>
     <div class="card">
         <div class="card-body">
-            <form method="POST" action="{{ route('update-profile') }}">
+            <form method="POST" action="/update-profile">
                 @csrf
             <table>
                 <tbody>
