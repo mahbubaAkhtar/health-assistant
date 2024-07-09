@@ -60,7 +60,7 @@
 <div class="main">
     <div class="card">
         <div class="card-body">
-            <a href="/admin/users/{{$user->id}}}/admin-edit-profile"><i class="fa fa-pen fa-xs edit"></i></a>
+            <a href="/admin/users/{{$user->id}}/admin-edit-profile"><i class="fa fa-pen fa-xs edit"></i></a>
             <table>
                 <tbody>
                 <tr>

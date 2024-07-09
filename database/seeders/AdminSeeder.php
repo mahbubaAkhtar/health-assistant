@@ -19,7 +19,7 @@ class AdminSeeder extends Seeder
            [
                "name" => "Admin Mahbuba",
                "email" => "admin@health.com",
-               "password" => '$2y$10$RQbBhbgmd4khO3EwXX3uiuD9c4mDR2PIG1YSK2217iwOlWNqaTrgy', //secret,
+               "password" => bcrypt('secret'), //secret,
                "gender" => "Female",
                "dob" => "2001-09-19",
                "is_admin" => 1,

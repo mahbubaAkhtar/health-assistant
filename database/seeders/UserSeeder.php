@@ -19,7 +19,7 @@ class UserSeeder extends Seeder
            [
                "name" => "Mst.Mahbuba Akhtar",
                "email" => "jedni1907@gmail.com",
-               "password" => '$2y$10$RQbBhbgmd4khO3EwXX3uiuD9c4mDR2PIG1YSK2217iwOlWNqaTrgy', //secret,
+               "password" => bcrypt('secret'), //secret,
                "gender" => "Female",
                "dob" => "2001-09-19",
                "critical_health_issue" => "ALLERGIC RHINITIS",

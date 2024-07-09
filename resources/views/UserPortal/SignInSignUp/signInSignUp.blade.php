@@ -90,44 +90,6 @@
     signInButton.addEventListener('click', () => {
         container.classList.remove("right-panel-active");
     });
-
-    document.getElementById('signUpForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const password_confirmation = document.getElementById('password_confirmation').value;
-
-        const res = await fetch('/signup', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ name, email, password, password_confirmation })
-        });
-
-        if (res.ok) {
-            alert('Sign up successful!');
-        } else {
-            alert('Error signing up.');
-        }
-    });
-
-    document.getElementById('signInForm').addEventListener('submit', async (e) => {
-        e.preventDefault();
-        const email = document.getElementById('signinEmail').value;
-        const password = document.getElementById('signinPassword').value;
-
-        const res = await fetch('/signin', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ email, password })
-        });
-
-        if (res.ok) {
-            alert('Sign in successful!');
-        } else {
-            alert('Error signing in.');
-        }
-    });
 </script>
 </body>
 </html>
