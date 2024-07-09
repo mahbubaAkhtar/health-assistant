@@ -43,7 +43,7 @@ class AnswerController extends Controller
             }
         }
 
-        // Retrieve answers
+        // get answers and concern key
         $answers = SymptomQuestion::query()->select(['symptom_questions.concern_key', 'answers.answer'])
             ->leftJoin('answers', 'symptom_questions.id', '=', 'answers.question_id')
             ->where('symptom_questions.symptom_id', $symptomId)
@@ -51,7 +51,7 @@ class AnswerController extends Controller
             ->get()
             ->keyBy('concern_key');
 
-        // Filter eligible generic IDs
+        // Find eligible generic IDs
         $genericIds = GenericEligibility::query()->distinct()->pluck('generic_id');
         $filteredEligibilities = collect();
 
@@ -82,7 +82,7 @@ class AnswerController extends Controller
             ->whereIn('id', $filteredEligibilities->pluck('generic_id'))
             ->with(['genericDose'])
             ->get();
-
+        //create prescription
         $prescription = Prescription::query()->create([
             'patient_name' => $user->name,
             'patient_age' => $user->age,
@@ -92,6 +92,7 @@ class AnswerController extends Controller
             'advice' => $this->getAdvice(count($filteredEligibilities), $symptom),
         ]);
 
+//         medicine store
         foreach ($generics as $generic) {
             PrescriptionMedicine::query()->create([
                 'prescription_id' => $prescription->id,

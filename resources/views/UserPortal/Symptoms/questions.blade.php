@@ -15,6 +15,7 @@
 @include('UserPortal.Navbar.navbar')
 <!-- Creating the form container  -->
 <div class="container">
+{{--      controller er veriable $symptom name--}}
     <h1>{{$symptom->name}} Questionnaire Form</h1>
 
     <!-- Contains error -->
@@ -50,6 +51,7 @@
                             <option value="{{$option['value']}}">{{$option['name']}}</option>
                         @endforeach
                     </select><br>
+
                 @elseif($question->input_type == 'text')
                     <input type="text" id="{{'input-' .$question->id}}" name="{{$inputKey}}" @if($question->input_is_required) required @endif><br>
 

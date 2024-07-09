@@ -36,8 +36,6 @@
                     <li class="dropdown">
                         <input type="checkbox" id="profile-dropdown-toggle" class="dropdown-toggle" >
 
-                        <!-- attribute tag er moddhe label er for="profile-dropdown-toggle" eita kaj korteche na tai ami aitake soriye diyechi  -->
-                        <!-- <a href="#" class="link"><i class='bx bx-user-circle'></i -->
                         <label for="profile-dropdown-toggle"  class="dropdown-options link">
                             <i class='nav-menu-icon bx bx-user-circle'></i>  PROFILE
                         </label>

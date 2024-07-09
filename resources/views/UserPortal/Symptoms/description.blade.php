@@ -13,6 +13,7 @@
 @include('UserPortal.Navbar.navbar')
 <div class="main_container">
     <div class="container">
+        {{--      controller er veriable $symptom name--}}
         <h2 class="contact-box-mess">{{ $symptom->name }}</h2>
         <p>{!! $symptom->description !!}</p>
         <a href="{{route('symptoms.questions',$symptom->id)}}">

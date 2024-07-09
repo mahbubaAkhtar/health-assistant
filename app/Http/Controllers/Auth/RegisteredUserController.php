@@ -15,6 +15,7 @@ use Illuminate\View\View;
 class RegisteredUserController extends Controller
 {
 
+
     /**
      * Handle an incoming registration request.
      *

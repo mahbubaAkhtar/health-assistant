@@ -442,13 +442,15 @@ class SymptomSeeder extends Seeder
 
 
         // insert into symptoms and symptoms_questions table
+
+        //create symptom
         foreach ($symptoms as $symptom) {
             $createdSymptom = Symptom::query()->create([
                 "name" => $symptom['name'],
                 "description" => $symptom['description'],
                 "image_src" => $symptom['image_src'],
             ]);
-
+            //create symptom question
             if ($questions = $symptom['questions'] ?? null) {
 
                 foreach ($questions as $question) {

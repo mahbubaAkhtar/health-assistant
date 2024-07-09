@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Symptom;
 use App\Models\SymptomQuestion;
 
-class SymptomController extends Controller
+class SymptomQuestionController extends Controller
 {
     public function show($id)
     {
